@@ -7,12 +7,12 @@
 ## Функциональные возможности
 
 ## Технологический стек:
--**Frontend**: Dart + Flutter;
--**Backend**: Python + FastAPI;
--**Object-Relational Mapping**: SQLAlchemy + psycopg2 + pydantic + alembic;
--**Datastorage**: PostgreSQL;
--**Containerize**: Docker;
--**CI/CD**: GitHub Actions.
+- **Frontend**: Dart + Flutter;
+- **Backend**: C# + WebAPI;
+- **Object-Relational Mapping**: EntityFramework
+- **Datastorage**: PostgreSQL;
+- **Containerize**: Docker;
+- **CI/CD**: GitHub Actions.
 
 ## Навигация в репозитории
 -**backend/**: исходный код серверных процессов, миграции базы данных, валидация данных, макеты HTTP-запросов и ответов;
