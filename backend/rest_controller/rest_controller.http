@@ -1,6 +1,0 @@
-@rest_controller_HostAddress = http://localhost:5026
-
-GET {{rest_controller_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

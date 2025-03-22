@@ -1,0 +1,25 @@
+# Используем официальный образ Flutter как базовый
+FROM cirrusci/flutter:3.6.0 AS build
+
+# Устанавливаем зависимости
+RUN apt-get update && apt-get install -y \
+    libglu1-mesa \
+    && rm -rf /var/lib/apt/lists/*
+
+# Устанавливаем рабочую директорию
+WORKDIR /up_11
+
+# Копируем файлы проекта
+COPY ./frontend/up_app ./up_app
+
+# Устанавливаем зависимости Flutter
+RUN flutter pub get
+
+# Сборка приложения под WEB
+RUN flutter build web
+
+# Сборка приложения под Linux
+RUN flutter build linux
+
+# Сборка приложения под Windows
+RUN flutter build window
