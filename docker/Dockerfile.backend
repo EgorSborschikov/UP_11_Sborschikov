@@ -1,0 +1,46 @@
+# Используем официальный образ Python с нужной версией
+FROM python:3.10-slim as builder
+
+# Устанавливаем системные зависимости
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends gcc python3-dev libpq-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+# Устанавливаем Poetry
+RUN pip install --upgrade pip && \
+    pip install poetry==1.8.2
+
+# Рабочая директория
+WORKDIR /app
+
+# Копируем файлы зависимостей
+COPY pyproject.toml poetry.lock ./
+
+# Устанавливаем зависимости проекта
+RUN poetry config virtualenvs.create false && \
+    poetry install --no-interaction --no-ansi --only main
+
+# Копируем исходный код
+COPY . .
+
+# Финальный образ
+FROM python:3.10-slim
+
+# Устанавливаем runtime зависимости
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends libpq5 && \
+    rm -rf /var/lib/apt/lists/*
+
+# Копируем установленные зависимости из builder
+COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
+COPY --from=builder /usr/local/bin /usr/local/bin
+
+# Копируем исходный код
+WORKDIR /app
+COPY . .
+
+# Открываем порт приложения
+EXPOSE 8000
+
+# Команда для запуска приложения
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -10,6 +10,7 @@ db = SessionLocal()
 
 Base = declarative_base()
 
+
 # Функция для получения сессии БД
 def get_db():
     db = SessionLocal()
