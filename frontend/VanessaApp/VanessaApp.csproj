@@ -34,9 +34,14 @@
     <ItemGroup>
       <Folder Include="Entities\" />
       <Folder Include="Screens\Accountant\" />
-      <Folder Include="Screens\Admin\" />
       <Folder Include="Screens\DutyDoctor\" />
       <Folder Include="Screens\Prarmacist\" />
       <Folder Include="Screens\SpecialistDoctor\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Page Update="Screens\Admin\EmployeeEditor.axaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
     </ItemGroup>
 </Project>
