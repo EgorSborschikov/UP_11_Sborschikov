@@ -1,0 +1,50 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:VanessaApp.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="VanessaApp.Screens.Admin.AdminWindow"
+        x:DataType="viewModels:AdminWindowViewModel"
+        Title="Админ-панель">
+    <StackPanel>
+        <TextBlock Text="Управление сотрудниками" FontSize="24" Margin="0,0,0,20"/>
+
+        <DataGrid Name="EmployeesDataGrid" AutoGenerateColumns="True" Height="300"
+                  ItemsSource="{Binding Employees}"/>
+
+        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+            <Button Content="Добавить" Click="OnAddButtonClicked" Margin="5"/>
+            <Button Content="Редактировать" Click="OnEditButtonClicked" Margin="5"/>
+            <Button Content="Удалить" Click="OnDeleteButtonClicked" Margin="5"/>
+        </StackPanel>
+
+        <!-- Панель для добавления/редактирования сотрудников -->
+        <StackPanel Name="EmployeePanel" Margin="0,20,0,0"
+                    IsVisible="{Binding IsEmployeePanelVisible}">
+            <TextBox Name="SurnameTextBox" Watermark="Фамилия" Width="300" Margin="0,0,0,10"
+                     Text="{Binding Surname}"/>
+            <TextBox Name="NameTextBox" Watermark="Имя" Width="300" Margin="0,0,0,10"
+                     Text="{Binding Name}"/>
+            <TextBox Name="LastNameTextBox" Watermark="Отчество" Width="300" Margin="0,0,0,10"
+                     Text="{Binding LastName}"/>
+            <TextBox Name="PassportDataTextBox" Watermark="Паспортные данные" Width="300" Margin="0,0,0,10"
+                     Text="{Binding PassportData}"/>
+            <TextBox Name="PhoneNumberTextBox" Watermark="Номер телефона" Width="300" Margin="0,0,0,10"
+                     Text="{Binding PhoneNumber}"/>
+            <TextBox Name="EmailTextBox" Watermark="Email" Width="300" Margin="0,0,0,10"
+                     Text="{Binding Email}"/>
+            <ComboBox Name="PositionComboBox" PlaceholderText="Должность" Width="300" Margin="0,0,0,10"
+                      ItemsSource="{Binding Positions}"
+                      SelectedItem="{Binding SelectedPosition}"/>
+            <TextBox Name="LoginTextBox" Watermark="Логин" Width="300" Margin="0,0,0,10"
+                     Text="{Binding Login}"/>
+            <TextBox Name="PasswordBox" Watermark="Пароль" Width="300" Margin="0,0,0,10"
+                        Text="{Binding Password}"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Сохранить" Click="OnSaveButtonClicked" Margin="5"/>
+                <Button Content="Отмена" Click="OnCancelButtonClicked" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

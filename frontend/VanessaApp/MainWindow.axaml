@@ -5,5 +5,16 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="VanessaApp.MainWindow"
         Title="VanessaApp">
-    Welcome to Avalonia!
+   <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="5">
+       <StackPanel>
+           <TextBlock Text = "АВТОРИЗАЦИЯ" FontSize="20" Margin="0,0,0,20"/>
+       </StackPanel>
+       <StackPanel>
+           <TextBox Name="LoginBox" Watermark="Логин" Width="300" Margin="0,0,0,10"/>
+           <TextBox Name="PasswordBox" Watermark="Пароль" Width="300" Margin="0,0,0,10" PasswordChar="*"/>
+       </StackPanel>
+       <StackPanel>
+           <Button Content="Войти" Width="300" Margin="10,0,0,10" Click="OnLoginClick"/>
+       </StackPanel>
+   </StackPanel>
 </Window>

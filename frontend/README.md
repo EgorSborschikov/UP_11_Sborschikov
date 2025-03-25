@@ -6,13 +6,13 @@
 ### Функциональные возможности
 
 ### Технологический стек:
-- **Frontend(Desktop)**: Dart + Flutter;
-- **Backend**: Python + FastAPI;
-- **Object-Relational Mapping**: SQLAlchemy + psycopg2 + sqlacodegen(миграция БД из PGAdmin в проект)
+- **Frontend(Desktop)**: Avalonia + ReactiveUI;
+- **Object-Relational Mapping**: EntityFrameworkCore + Npgsql;
 - **Datastorage**: PostgreSQL;
 - **Containerize**: Docker;
 
 ### Навигация в репозитории
-- **backend/**: исходный код серверных процессов, миграции базы данных, валидация данных, макеты HTTP-запросов и ответов,  хранимые процедуры в БД,;
-- **documentation/**: описание предметной области, ER-модель, документация к API (Swagger);
+- **data_upload/**: скрипты схемы БД, insert-запросы, хранимые процедуры в БД(data_upload/replace_procedures/);
+- **documentation/**: описание предметной области, ER-модель;
 - **frontend/**: исходный код клиентского приложения, реализующий CRUD-логику;
+- **docker/**: bash-скрипт для создания контейнера Docker (удаленное соединение с базой данных)

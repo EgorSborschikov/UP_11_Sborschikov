@@ -194,3 +194,7 @@
 /home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/obj/Debug/net8.0/VanessaApp.csproj.Up2Date
 /home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/obj/Debug/net8.0/VanessaApp.genruntimeconfig.cache
 /home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/obj/Debug/net8.0/ref/VanessaApp.dll
+/home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/bin/Debug/net8.0/DynamicData.dll
+/home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/bin/Debug/net8.0/ReactiveUI.dll
+/home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/bin/Debug/net8.0/Splat.dll
+/home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/bin/Debug/net8.0/System.Reactive.dll

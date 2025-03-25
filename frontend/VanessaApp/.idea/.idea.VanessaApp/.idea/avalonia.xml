@@ -3,7 +3,9 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="App.axaml" value="VanessaApp.csproj" />
         <entry key="MainWindow.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/Admin/AdminWindow.axaml" value="VanessaApp.csproj" />
       </map>
     </option>
     <option name="workingDirectorySpecification" value="SolutionDirectory" />

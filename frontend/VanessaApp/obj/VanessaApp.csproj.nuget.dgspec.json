@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[11.2.1, )"
             },
+            "Avalonia.Controls.DataGrid": {
+              "target": "Package",
+              "version": "[11.2.1, )"
+            },
             "Avalonia.Desktop": {
               "target": "Package",
               "version": "[11.2.1, )"
@@ -95,6 +99,14 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[9.0.3, )"
+            },
+            "ReactiveUI": {
+              "target": "Package",
+              "version": "[20.2.45, )"
+            },
+            "System.Linq": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

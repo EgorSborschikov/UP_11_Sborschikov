@@ -26,6 +26,7 @@
 /home/egor/.nuget/packages/avalonia.avaloniaedit/0.10.0/lib/netstandard2.0/AvaloniaEdit.dll
 /home/egor/.nuget/packages/markdown.avalonia.tight/0.10.10/lib/netcoreapp2.0/ColorTextBlock.Avalonia.dll
 /home/egor/.nuget/packages/dialoghost.avalonia/0.8.1/lib/netstandard2.0/DialogHost.Avalonia.dll
+/home/egor/.nuget/packages/dynamicdata/9.1.2/lib/net8.0/DynamicData.dll
 /home/egor/.nuget/packages/entityframework/6.5.1/lib/netstandard2.1/EntityFramework.dll
 /home/egor/.nuget/packages/entityframework/6.5.1/lib/netstandard2.1/EntityFramework.SqlServer.dll
 /home/egor/.nuget/packages/harfbuzzsharp/7.3.0.2/lib/net6.0/HarfBuzzSharp.dll
@@ -69,7 +70,9 @@
 /home/egor/.nuget/packages/microsoft.netcore.app.ref/8.0.14/ref/net8.0/netstandard.dll
 /home/egor/.nuget/packages/npgsql/9.0.3/lib/net8.0/Npgsql.dll
 /home/egor/.nuget/packages/npgsql.entityframeworkcore.postgresql/9.0.3/lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/egor/.nuget/packages/reactiveui/20.2.45/lib/net8.0/ReactiveUI.dll
 /home/egor/.nuget/packages/skiasharp/2.88.8/lib/net6.0/SkiaSharp.dll
+/home/egor/.nuget/packages/splat/15.3.1/lib/net8.0/Splat.dll
 /home/egor/.nuget/packages/microsoft.netcore.app.ref/8.0.14/ref/net8.0/System.AppContext.dll
 /home/egor/.nuget/packages/microsoft.netcore.app.ref/8.0.14/ref/net8.0/System.Buffers.dll
 /home/egor/.nuget/packages/system.codedom/6.0.0/lib/net6.0/System.CodeDom.dll
@@ -160,6 +163,7 @@
 /home/egor/.nuget/packages/microsoft.netcore.app.ref/8.0.14/ref/net8.0/System.Numerics.dll
 /home/egor/.nuget/packages/microsoft.netcore.app.ref/8.0.14/ref/net8.0/System.Numerics.Vectors.dll
 /home/egor/.nuget/packages/microsoft.netcore.app.ref/8.0.14/ref/net8.0/System.ObjectModel.dll
+/home/egor/.nuget/packages/system.reactive/6.0.1/lib/net6.0/System.Reactive.dll
 /home/egor/.nuget/packages/microsoft.netcore.app.ref/8.0.14/ref/net8.0/System.Reflection.DispatchProxy.dll
 /home/egor/.nuget/packages/microsoft.netcore.app.ref/8.0.14/ref/net8.0/System.Reflection.dll
 /home/egor/.nuget/packages/microsoft.netcore.app.ref/8.0.14/ref/net8.0/System.Reflection.Emit.dll

@@ -26,9 +26,17 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.3" />
         <PackageReference Include="Npgsql" Version="9.0.3" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
+        <PackageReference Include="ReactiveUI" Version="20.2.45" />
+        <PackageReference Include="System.Linq" Version="4.3.0" />
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.1" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Entities\" />
+      <Folder Include="Screens\Accountant\" />
+      <Folder Include="Screens\Admin\" />
+      <Folder Include="Screens\DutyDoctor\" />
+      <Folder Include="Screens\Prarmacist\" />
+      <Folder Include="Screens\SpecialistDoctor\" />
     </ItemGroup>
 </Project>
