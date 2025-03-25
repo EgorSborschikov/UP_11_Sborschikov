@@ -12,16 +12,16 @@ namespace VanessaApp.ViewModels
         private readonly VanessaDbContext _context;
 
         // Поле для выбранного сотрудника
-        private employee _selectedEmployee;
-        public employee SelectedEmployee
+        private object _selectedEmployee;
+        public object SelectedEmployee
         {
             get => _selectedEmployee;
             set => this.RaiseAndSetIfChanged(ref _selectedEmployee, value);
         }
 
         // Коллекция сотрудников
-        private ObservableCollection<employee> _employees;
-        public ObservableCollection<employee> Employees
+        private ObservableCollection<object> _employees;
+        public ObservableCollection<object> Employees
         {
             get => _employees;
             private set => this.RaiseAndSetIfChanged(ref _employees, value); // Сделаем сеттер приватным
@@ -31,17 +31,31 @@ namespace VanessaApp.ViewModels
         public AdminWindowViewModel()
         {
             _context = new VanessaDbContext();
-            Employees = new ObservableCollection<employee>();
+            Employees = new ObservableCollection<object>();
             LoadEmployees();
         }
 
         // Метод для получения сотрудников из базы данных
-        private IQueryable<employee> GetEmployees()
+        private IQueryable<object> GetEmployees()
         {
             return _context.employees
                 .Include(e => e.IDBranchNavigation)
                 .Include(e => e.IDPositionNavigation)
-                .Include(e => e.IDAuthNavigation);
+                .Include(e => e.IDAuthNavigation)
+                .Select(e => new
+                {
+                    e.IDEmployee,
+                    e.Surname,
+                    e.Name,
+                    e.LastName,
+                    e.PassportData,
+                    e.PhoneNumber,
+                    e.Email,
+                    e.IDBranchNavigation.BranchName,
+                    e.IDPositionNavigation.PositionName,
+                    AuthLogin = e.IDAuthNavigation.Login,
+                    AuthPassword = e.IDAuthNavigation.Password,
+                });
         }
 
         // Метод для загрузки сотрудников

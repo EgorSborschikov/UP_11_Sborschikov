@@ -8,7 +8,12 @@
         x:DataType="viewModels:AdminWindowViewModel"
         Title="Админ-панель">
 
-    <DockPanel LastChildFill="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/> <!-- DataGrid Row -->
+            <RowDefinition Height="Auto"/> <!-- Button Row -->
+        </Grid.RowDefinitions>
+        
         <DataGrid ItemsSource="{Binding Employees}"
                   SelectedItem="{Binding SelectedEmployee}"
                   AutoGenerateColumns="True"
@@ -22,8 +27,17 @@
                   GridLinesVisibility="All"
                   BorderThickness="1" BorderBrush="Gray"/>
 
-        <StackPanel DockPanel.Dock="Bottom" Width="200" Margin="10" Spacing="10">
-            
+        <StackPanel 
+            Grid.Row="1" 
+            DockPanel.Dock="Bottom" 
+            Width="200" 
+            Spacing="10" 
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+            <Button Name="AddEmployeeButton" Content="Добавить сотрудника"/>
+            <Button Name="EditEmployeeButton" Content="Изменить данные сотрудника" />
+            <Button Name="DeleteEmployeeButton" Content="Удалить сотрудника" />
         </StackPanel>
-    </DockPanel>
+    </Grid>
 </Window>
