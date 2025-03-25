@@ -33,5 +33,8 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/Screens/Admin/AddEmployee/AddEmployeeWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/Screens/Admin/AdminWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

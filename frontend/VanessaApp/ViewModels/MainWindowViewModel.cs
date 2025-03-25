@@ -8,6 +8,9 @@ using VanessaApp.Screens.Admin;
 
 namespace VanessaApp.ViewModels;
 
+/// <summary>
+/// Login Window (MainWindow) View Model
+/// </summary>
 public class MainWindowViewModel : ReactiveObject
 {
     private readonly VanessaDbContext _context;
@@ -61,6 +64,7 @@ public class MainWindowViewModel : ReactiveObject
                             if (adminWindow != null)
                             {
                                 adminWindow.Show();
+                                //this.Hide();
                             }
                             else
                             {

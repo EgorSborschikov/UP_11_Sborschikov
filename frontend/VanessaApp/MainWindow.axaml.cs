@@ -8,7 +8,7 @@ using VanessaApp.ViewModels;
 namespace VanessaApp;
 
 /// <summary>
-/// Логика взаимодействия с MainWindow
+/// Logic of interaction with LoginWindow(MainWindow)
 /// </summary>
 public partial class MainWindow : Window
 {

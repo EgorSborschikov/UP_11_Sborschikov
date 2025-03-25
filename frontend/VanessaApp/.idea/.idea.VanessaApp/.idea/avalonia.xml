@@ -7,6 +7,7 @@
         <entry key="EmployeeEditor.axaml" value="VanessaApp.csproj" />
         <entry key="Frame.axaml" value="VanessaApp.csproj" />
         <entry key="MainWindow.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/Admin/AddEmployee/AddEmployeeWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Admin/AdminWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Admin/EmployeeEditor.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Admin/Frames/AddEmployeeFrame.axaml" value="VanessaApp.csproj" />
