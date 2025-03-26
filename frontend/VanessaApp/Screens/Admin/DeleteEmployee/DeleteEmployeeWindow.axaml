@@ -1,0 +1,17 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:VanessaApp.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="150"
+        x:Class="VanessaApp.Screens.Admin.DeleteEmployee.DeleteEmployeeWindow"
+        Title="Редактирование сотрудника"
+        x:DataType="viewModels:AdminWindowViewModel">
+        
+        <StackPanel Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <ComboBox x:Name="EmployeeIdComboBox"
+                          PlaceholderText="Выберите ID сотрудника"
+                          ItemsSource="{Binding EmployeeIds}" />
+                <Button Content="Удалить" Click="DeleteButton_Click" Margin="10,20,10,10"/>
+        </StackPanel>
+</Window>

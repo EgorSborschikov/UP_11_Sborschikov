@@ -58,23 +58,6 @@ public partial class AdminWindow : Window
     
     private void DeleteEmployeeButtonClick(object? sender, RoutedEventArgs e)
     {
-        // Delete current employee
-        /*var viewModel = (AdminWindowViewModel)DataContext;
-        var selectedEmployee = viewModel?.SelectedEmployee;
-
-        if (selectedEmployee != null)
-        {
-            var result = MessageBoxManager.GetMessageBoxStandard("Подтверждение", "Вы уверены, что хотите удалить выбранного сотрудника?").ShowAsync();
-
-            if (result.IsCompleted)
-            {
-                Console.WriteLine($"Редактирование сотрудника: ID = {selectedEmployee.IDEmployee}, Фамилия = {selectedEmployee.Surname}, Имя = {selectedEmployee.Name}, Отчество = {selectedEmployee.LastName}");
-                viewModel?.DeleteEmployee(selectedEmployee);
-            }
-        }
-        else
-        {
-            MessageBoxManager.GetMessageBoxStandard("Ошибка", "Выберите сотрудника для удаления.").ShowAsync();
-        }*/
+        
     }
 }

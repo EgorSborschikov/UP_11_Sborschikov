@@ -9,9 +9,12 @@
         <entry key="MainWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Admin/AddEmployee/AddEmployeeWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Admin/AdminWindow.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/Admin/DeleteEmployee/DeleteEmployeeWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Admin/EditEmployee/EditEmployeeWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Admin/EmployeeEditor.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Admin/Frames/AddEmployeeFrame.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/DutyDoctor/AddCoupon/AddCouponWindow.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/DutyDoctor/DutyDoctorWindow.axaml" value="VanessaApp.csproj" />
       </map>
     </option>
     <option name="workingDirectorySpecification" value="SolutionDirectory" />

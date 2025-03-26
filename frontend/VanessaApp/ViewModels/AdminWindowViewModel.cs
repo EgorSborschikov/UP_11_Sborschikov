@@ -198,7 +198,7 @@ public class AdminWindowViewModel : ReactiveObject
         }
     }
     
-    public void DeleteEmployee(employee employee)
+    public void DeleteEmployee(int employeeId)
     {
         
     }

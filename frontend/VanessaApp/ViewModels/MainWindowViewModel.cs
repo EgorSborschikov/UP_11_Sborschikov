@@ -5,6 +5,7 @@ using ReactiveUI;
 using VanessaApp.Entities;
 using MsBox.Avalonia;
 using VanessaApp.Screens.Admin;
+using VanessaApp.Screens.DutyDoctor;
 
 namespace VanessaApp.ViewModels;
 
@@ -57,6 +58,16 @@ public class MainWindowViewModel : ReactiveObject
                         case 4: // Дежурный врач приемного отделения
                             Console.WriteLine("Duty doctor role selected.");
                             // Открыть окно дежурного врача
+                            var dutyDoctorWindow = new DutyDoctorWindow();
+                            if (dutyDoctorWindow != null)
+                            {
+                                dutyDoctorWindow.Show();
+                                //this.Hide();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Failed to initialize DutyDoctorWindow.");
+                            }
                             break;
                         case 5: // Администратор внутреннего учета
                             Console.WriteLine("Admin role selected.");
