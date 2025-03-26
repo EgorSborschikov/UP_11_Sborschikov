@@ -18,22 +18,22 @@ public partial class employee
     public int IDAuth { get; set; }
 
     [StringLength(25)]
-    public string Surname { get; set; } = null!;
+    public string? Surname { get; set; } = null!;
 
     [StringLength(30)]
-    public string Name { get; set; } = null!;
+    public string? Name { get; set; } = null!;
 
     [StringLength(35)]
-    public string LastName { get; set; } = null!;
+    public string? LastName { get; set; } = null!;
 
     [StringLength(20)]
-    public string PassportData { get; set; } = null!;
+    public string? PassportData { get; set; } = null!;
 
     [StringLength(20)]
-    public string PhoneNumber { get; set; } = null!;
+    public string? PhoneNumber { get; set; } = null!;
 
     [StringLength(100)]
-    public string Email { get; set; } = null!;
+    public string? Email { get; set; } = null!;
 
     [ForeignKey("IDAuth")]
     [InverseProperty("employees")]

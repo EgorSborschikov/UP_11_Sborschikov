@@ -13,10 +13,10 @@ public partial class auth
     public int IDAuth { get; set; }
 
     [StringLength(100)]
-    public string Login { get; set; } = null!;
+    public string? Login { get; set; } = null!;
 
     [StringLength(100)]
-    public string Password { get; set; } = null!;
+    public string? Password { get; set; } = null!;
 
     [InverseProperty("IDAuthNavigation")]
     public virtual ICollection<employee> employees { get; set; } = new List<employee>();

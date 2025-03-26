@@ -1,0 +1,46 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:VanessaApp.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="800"
+        x:Class="VanessaApp.Screens.Admin.EditEmployee.EditEmployeeWindow"
+        Title="Редактирование сотрудника"
+        x:DataType="viewModels:AdminWindowViewModel">
+
+    <StackPanel Margin="10">
+        <!-- Поле ввода для идентификатора сотрудника -->
+        <ComboBox
+            x:Name="EmployeeIdComboBox"
+            PlaceholderText="Выберите сотрудника по ИД"
+            ItemsSource="{Binding EmployeeIds}"/>
+
+        <!-- Поля ввода для данных сотрудника -->
+        <TextBox x:Name="SurnameTextBox" Watermark="Фамилия"/>
+        <TextBox x:Name="NameTextBox" Watermark="Имя" />
+        <TextBox x:Name="LastNameTextBox" Watermark="Отчество" />
+        <TextBox x:Name="PassportDataTextBox" Watermark="Паспортные данные" />
+        <TextBox x:Name="PhoneNumberTextBox" Watermark="Номер телефона" />
+        <TextBox x:Name="EmailTextBox" Watermark="Адрес электронной почты" />
+
+        <!-- ComboBox для выбора Branch -->
+        <ComboBox 
+            x:Name="BranchComboBox" 
+            PlaceholderText="Филиал" 
+            ItemsSource="{Binding Branches}"/>
+
+        <!-- ComboBox для выбора Position -->
+        <ComboBox 
+            x:Name="PositionComboBox" 
+            PlaceholderText="Должность" 
+            ItemsSource="{Binding Positions}" />
+
+
+        <!-- Поля ввода для данных auth -->
+        <TextBox x:Name="LoginTextBox" Watermark="Логин" />
+        <TextBox x:Name="PasswordTextBox" Watermark="Пароль" />
+
+        <!-- Кнопка для сохранения -->
+        <Button Content="Сохранить" Click="SaveEditDataButton_Click" />
+    </StackPanel>
+</Window>

@@ -34,6 +34,7 @@
     <ItemGroup>
       <Folder Include="Entities\" />
       <Folder Include="Screens\Accountant\" />
+      <Folder Include="Screens\Admin\EditEmployee\" />
       <Folder Include="Screens\DutyDoctor\" />
       <Folder Include="Screens\Prarmacist\" />
       <Folder Include="Screens\SpecialistDoctor\" />

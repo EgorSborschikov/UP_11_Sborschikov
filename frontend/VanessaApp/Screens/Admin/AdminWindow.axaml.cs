@@ -1,8 +1,11 @@
+using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using MsBox.Avalonia;
 using VanessaApp.Entities;
 using VanessaApp.Screens.Admin.AddEmployee;
+using VanessaApp.Screens.Admin.EditEmployee;
 using VanessaApp.ViewModels;
 
 namespace VanessaApp.Screens.Admin;
@@ -23,27 +26,55 @@ public partial class AdminWindow : Window
         AvaloniaXamlLoader.Load(this);
     }
 
-    private async void AddEmployeButtonClick(object? sender, RoutedEventArgs e)
+    private async void AddEmployeeButtonClick(object? sender, RoutedEventArgs e)
     {
-        // Получаем текущий ViewModel
-        var _viewModel = (AdminWindowViewModel)DataContext;
-
-        // Создаем и показываем окно добавления сотрудника
-        var addEmployeeWindow = new AddEmployeeWindow(_viewModel);
-        await addEmployeeWindow.ShowDialog(this);
-        
-        // После закрытия окна, если сотрудник был успешно добавлен, обновляем DataGrid
-        // Обновление DataGrid происходит автоматически при вызове метода AddEmployee в AddEmployeeWindow
+        try
+        {
+            var _viewModel = (AdminWindowViewModel)DataContext;
+            
+            var addEmployeeWindow = new AddEmployeeWindow(_viewModel);
+            await addEmployeeWindow.ShowDialog(this);
+        }
+        catch (Exception ex)
+        {
+            //MessageBoxManager.GetMessageBoxStandard("Ошибка", "Выберите сотрудника для удаления.").ShowAsync();
+        }
     }
 
 
-    private void EditEmployeButtonClick(object? sender, RoutedEventArgs e)
+    private async void EditEmployeeButtonClick(object? sender, RoutedEventArgs e)
     {
-        // Edit current employee data
+        try
+        {
+            var _viewModel = (AdminWindowViewModel)DataContext;
+            var editEmployeeWindow = new EditEmployeeWindow(_viewModel);
+            await editEmployeeWindow.ShowDialog(this);
+        }
+        catch (Exception ex)
+        {
+            //MessageBoxManager.GetMessageBoxStandard("Ошибка", "Выберите сотрудника для удаления.").ShowAsync();
+        }
     }
-
-    private void DeleteEmployeButtonClick(object? sender, RoutedEventArgs e)
+    
+    private void DeleteEmployeeButtonClick(object? sender, RoutedEventArgs e)
     {
         // Delete current employee
+        /*var viewModel = (AdminWindowViewModel)DataContext;
+        var selectedEmployee = viewModel?.SelectedEmployee;
+
+        if (selectedEmployee != null)
+        {
+            var result = MessageBoxManager.GetMessageBoxStandard("Подтверждение", "Вы уверены, что хотите удалить выбранного сотрудника?").ShowAsync();
+
+            if (result.IsCompleted)
+            {
+                Console.WriteLine($"Редактирование сотрудника: ID = {selectedEmployee.IDEmployee}, Фамилия = {selectedEmployee.Surname}, Имя = {selectedEmployee.Name}, Отчество = {selectedEmployee.LastName}");
+                viewModel?.DeleteEmployee(selectedEmployee);
+            }
+        }
+        else
+        {
+            MessageBoxManager.GetMessageBoxStandard("Ошибка", "Выберите сотрудника для удаления.").ShowAsync();
+        }*/
     }
 }

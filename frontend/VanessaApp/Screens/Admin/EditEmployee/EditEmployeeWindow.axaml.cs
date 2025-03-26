@@ -1,18 +1,23 @@
+using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using MsBox.Avalonia;
+using VanessaApp.Entities;
 using VanessaApp.ViewModels;
 
-namespace VanessaApp.Screens.Admin.AddEmployee;
+namespace VanessaApp.Screens.Admin.EditEmployee;
 
-public partial class AddEmployeeWindow : Window
+public partial class EditEmployeeWindow : Window
 {
     public AdminWindowViewModel ViewModel { get; }
-    public AddEmployeeWindow(AdminWindowViewModel? viewModel)
+
+    
+    public EditEmployeeWindow(AdminWindowViewModel? viewModel)
     {
         this.InitializeComponent();
-        ViewModel = new AdminWindowViewModel();
+        ViewModel = viewModel;
         DataContext = ViewModel;
     }
 
@@ -21,11 +26,8 @@ public partial class AddEmployeeWindow : Window
         AvaloniaXamlLoader.Load(this);
     }
 
-    private void SaveButton_Click(object? sender, RoutedEventArgs e)
+    private void SaveEditDataButton_Click(object sender, RoutedEventArgs e)
     {
-        //Logic of Save new employee data
-        
-        //Get data from form
         var surname = this.FindControl<TextBox>("SurnameTextBox")?.Text;
         var name = this.FindControl<TextBox>("NameTextBox")?.Text;
         var lastName = this.FindControl<TextBox>("LastNameTextBox")?.Text;
@@ -35,7 +37,6 @@ public partial class AddEmployeeWindow : Window
         var login = this.FindControl<TextBox>("LoginTextBox")?.Text;
         var password = this.FindControl<TextBox>("PasswordTextBox")?.Text;
 
-        // Check in attribute is not null
         if (string.IsNullOrWhiteSpace(surname) ||
             string.IsNullOrWhiteSpace(name) ||
             string.IsNullOrWhiteSpace(lastName) ||
@@ -45,13 +46,12 @@ public partial class AddEmployeeWindow : Window
             string.IsNullOrWhiteSpace(login) ||
             string.IsNullOrWhiteSpace(password))
         {
-            // If attribute is null...
             MessageBoxManager.GetMessageBoxStandard("Ошибка", "Все поля должны быть заполнены.").ShowAsync();
             return;
         }
 
-        // Data broadcast in ViewModel
-        ViewModel.AddEmployee(
+        ViewModel.UpdateEmployee(
+            ViewModel.SelectedEmployeeId,
             surname,
             name,
             lastName,
@@ -61,10 +61,9 @@ public partial class AddEmployeeWindow : Window
             ViewModel.SelectedBranch.IDBranch,
             ViewModel.SelectedPosition.IDPosition,
             login,
-            password
-        );
+            password);
 
-        // Close window after saving
         this.Close();
     }
+
 }

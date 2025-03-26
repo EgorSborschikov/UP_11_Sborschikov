@@ -35,9 +35,9 @@
             Orientation="Horizontal"
             VerticalAlignment="Center"
             HorizontalAlignment="Center">
-            <Button Name="AddEmployeeButton" Content="Добавить сотрудника" Click="AddEmployeButtonClick"/>
-            <Button Name="EditEmployeeButton" Content="Изменить данные сотрудника" Click="EditEmployeButtonClick"/>
-            <Button Name="DeleteEmployeeButton" Content="Удалить сотрудника" Click="DeleteEmployeButtonClick"/>
+            <Button Name="AddEmployeeButton" Content="Добавить сотрудника" Click="AddEmployeeButtonClick"/>
+            <Button Name="EditEmployeeButton" Content="Изменить данные сотрудника" Click="EditEmployeeButtonClick"/>
+            <Button Name="DeleteEmployeeButton" Content="Удалить сотрудника" Click="DeleteEmployeeButtonClick"/>
         </StackPanel>
     </Grid>
 </Window>

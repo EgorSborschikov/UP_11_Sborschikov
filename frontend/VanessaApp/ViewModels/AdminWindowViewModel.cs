@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MsBox.Avalonia;
 using ReactiveUI;
@@ -17,13 +18,23 @@ public class AdminWindowViewModel : ReactiveObject
     private readonly VanessaDbContext _context;
 
     // Attribute for current employee
-    private object _selectedEmployee;
-    public object SelectedEmployee
+    public ObservableCollection<int> EmployeeIds { get; set; }
+
+    private int _selectedEmployeeId;
+    public int SelectedEmployeeId
+    {
+        get => _selectedEmployeeId;
+        set => this.RaiseAndSetIfChanged(ref _selectedEmployeeId, value);
+    }
+
+    
+    private employee _selectedEmployee;
+    public employee SelectedEmployee
     {
         get => _selectedEmployee;
         set => this.RaiseAndSetIfChanged(ref _selectedEmployee, value);
     }
-
+    
     // Employees collection
     private ObservableCollection<object> _employees;
     public ObservableCollection<object> Employees
@@ -44,8 +55,10 @@ public class AdminWindowViewModel : ReactiveObject
         _context = new VanessaDbContext();
         Employees = new ObservableCollection<object>();
         LoadEmployees();
+        LoadEmployeeIds();
         LoadBranches();
         LoadPositions();
+        Console.WriteLine("AdminWindowViewModel initialized.");
     }
 
     // Get employees data from Database
@@ -71,7 +84,7 @@ public class AdminWindowViewModel : ReactiveObject
                 AuthPassword = e.IDAuthNavigation.Password,
             });
     }
-
+    
     // Load employees data
     private void LoadEmployees()
     {
@@ -134,7 +147,7 @@ public class AdminWindowViewModel : ReactiveObject
                 transaction.Commit();
                 Console.WriteLine("Transaction committed.");
                 
-                LoadEmployees();
+                //LoadEmployees();
                 Console.WriteLine("Success added new employee.");
             }
         }
@@ -143,6 +156,51 @@ public class AdminWindowViewModel : ReactiveObject
             Console.WriteLine($"Error adding employee: {ex.Message}");
             MessageBoxManager.GetMessageBoxStandard("Ошибка", "Произошла ошибка при добавлении сотрудника. Попробуйте повторить позднее").ShowAsync();
         }
+    }
+
+    public void UpdateEmployee(int employeeId, string surname, string name, string lastName, string passportData, string phoneNumber, string email, int branchId, int positionId, string login, string password)
+    {
+        try
+        {
+            var employee = _context.employees.Find(employeeId);
+            if (employee != null)
+            {
+                employee.Surname = surname;
+                employee.Name = name;
+                employee.LastName = lastName;
+                employee.PassportData = passportData;
+                employee.PhoneNumber = phoneNumber;
+                employee.Email = email;
+                employee.IDBranch = branchId;
+                employee.IDPosition = positionId;
+
+                var auth = _context.auths.Find(employee.IDAuth);
+                if (auth != null)
+                {
+                    auth.Login = login;
+                    auth.Password = password;
+                }
+
+                _context.SaveChanges();
+                LoadEmployees();
+                Console.WriteLine("Successfully updated employee.");
+            }
+            else
+            {
+                Console.WriteLine("Employee not found.");
+                MessageBoxManager.GetMessageBoxStandard("Ошибка", "Сотрудник не найден.").ShowAsync();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error updating employee: {ex.Message}");
+            MessageBoxManager.GetMessageBoxStandard("Ошибка", "Произошла ошибка при обновлении данных сотрудника.").ShowAsync();
+        }
+    }
+    
+    public void DeleteEmployee(employee employee)
+    {
+        
     }
 
     private void LoadBranches()
@@ -159,6 +217,12 @@ public class AdminWindowViewModel : ReactiveObject
         Console.WriteLine($"Loaded {Positions.Count} positions");
     }
 
+    private void LoadEmployeeIds()
+    {
+        var employeeIds = GetEmployeesIds().ToList();
+        EmployeeIds = new ObservableCollection<int>(employeeIds);
+        Console.WriteLine($"Loaded {EmployeeIds.Count} employee IDs.");
+    }
 
     public IEnumerable<string> GetBranches()
     {
@@ -168,5 +232,10 @@ public class AdminWindowViewModel : ReactiveObject
     public IEnumerable<string> GetPositions()
     {
         return _context.positions.Select(p => p.PositionName).ToList();
+    }
+
+    public IEnumerable<int> GetEmployeesIds()
+    {
+        return _context.employees.Select(e => e.IDEmployee).ToList();
     }
 }
