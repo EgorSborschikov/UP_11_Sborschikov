@@ -12,7 +12,6 @@ public partial class PharmacistWindow : Window
     public PharmacistWindow()
     {
         InitializeComponent();
-        DataContext = new PharmacistWindowViewModel();
     }
 
     private void InitializeComponent()
