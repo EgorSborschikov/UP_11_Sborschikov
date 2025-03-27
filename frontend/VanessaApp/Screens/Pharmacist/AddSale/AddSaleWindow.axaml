@@ -1,0 +1,50 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:VanessaApp.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="150"
+        x:Class="VanessaApp.Screens.Pharmacist.AddSale.AddSaleWindow"
+        Title="Продажа товара"
+        x:DataType="viewModels:PharmacistWindowViewModel">
+    <Grid RowDefinitions="Auto,Auto,*,Auto,Auto,Auto" 
+          ColumnDefinitions="*,*"
+          Margin="10"
+          HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <!--Select Client-->
+        <TextBlock Text="Выберите клиента:" Margin="5"/>
+        <ComboBox Grid.Row="0" Grid.Column="0" Name="ClientsComboBox" Width="200" Margin="5" />
+        
+        <!--Select products (Busket)-->
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Выберите товары:" Margin="5"/>
+        <DataGrid Grid.Row="2" Grid.Column="0" Name="ProductSelectDataGrid" Height="200" Margin="5" AutoGenerateColumns="False" ItemsSource="{Binding Products}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Название" Binding="{Binding ProductName}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding ProductPrice}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <!--Total price info-->
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="" Margin="5"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Name="TotalPriceTextBox" IsReadOnly="True" Width="200" Margin="5"/>
+        
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"  Name="PayButton" Content="Оплатить" Width="200" Margin="5" Click="PayButton_Click"/>
+    </Grid>
+</Window>

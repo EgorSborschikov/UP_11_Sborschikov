@@ -16,10 +16,10 @@ public class SpecialistDoctorViewModel
     {
         _context = new VanessaDbContext();
         Receipts = new ObservableCollection<PatientByCouponsViewModel>();
-        LoadPatiens();
+        LoadPatients();
     }
 
-    private void LoadPatiens()
+    private void LoadPatients()
     {
         var patientByCoupons = _context.patient_by_coupons
             .Select(p => new PatientByCouponsViewModel

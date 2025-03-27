@@ -1,5 +1,4 @@
 using System;
-using System.Collections.ObjectModel;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using ReactiveUI;
@@ -7,6 +6,7 @@ using VanessaApp.Entities;
 using MsBox.Avalonia;
 using VanessaApp.Screens.Admin;
 using VanessaApp.Screens.DutyDoctor;
+using VanessaApp.Screens.Pharmacist;
 using VanessaApp.Screens.SpecialistDoctor;
 
 namespace VanessaApp.ViewModels;
@@ -16,6 +16,7 @@ namespace VanessaApp.ViewModels;
 /// </summary>
 public class MainWindowViewModel : ReactiveObject
 {
+    // Database context instance
     private readonly VanessaDbContext _context;
 
     public MainWindowViewModel()
@@ -23,12 +24,14 @@ public class MainWindowViewModel : ReactiveObject
         _context = new VanessaDbContext();
     }
 
+    // Employees authorization
     public async void Login(string? login, string? password)
     {
         try
         {
             Console.WriteLine("Attempting to log in...");
 
+            // Get auth employee data
             var auth = await _context.auths
                 .Include(a => a.employees)
                 .ThenInclude(e => e.IDPositionNavigation)
@@ -43,17 +46,22 @@ public class MainWindowViewModel : ReactiveObject
                 {
                     Console.WriteLine("Employee found.");
 
+                    // Roles (Positions) authentication
                     switch (employee.IDPosition)
                     {
-                        case 1: // Фармацевт-консультант
+                        case 1: // Pharmacist Window
                             Console.WriteLine("Pharmacist role selected.");
-                            // Открыть окно фармацевта
+                            var pharmaticsWindow = new PharmacistWindow();
+                            if (pharmaticsWindow != null)
+                            {
+                                pharmaticsWindow.Show();
+                            }
                             break;
-                        case 2: // Бухгалтер
+                        case 2: // Accountant Window
                             Console.WriteLine("Accountant role selected.");
                             // Открыть окно бухгалтера
                             break;
-                        case 3: // Врач-специалист
+                        case 3: // Specialist Doctor Window
                             Console.WriteLine("Specialist doctor role selected.");
                             var specialistDoctorWindow = new SpecialistDoctorWindow();
                             if (specialistDoctorWindow != null)
@@ -61,9 +69,8 @@ public class MainWindowViewModel : ReactiveObject
                                 specialistDoctorWindow.Show();
                             }
                             break;
-                        case 4: // Дежурный врач приемного отделения
+                        case 4: // Duty Doctor Window
                             Console.WriteLine("Duty doctor role selected.");
-                            // Открыть окно дежурного врача
                             var dutyDoctorWindow = new DutyDoctorWindow();
                             if (dutyDoctorWindow != null)
                             {
@@ -74,13 +81,12 @@ public class MainWindowViewModel : ReactiveObject
                                 Console.WriteLine("Failed to initialize DutyDoctorWindow.");
                             }
                             break;
-                        case 5: // Администратор внутреннего учета
+                        case 5: // Admin Window
                             Console.WriteLine("Admin role selected.");
                             var adminWindow = new AdminWindow();
                             if (adminWindow != null)
                             {
                                 adminWindow.Show();
-                                //this.Hide();
                             }
                             else
                             {

@@ -12,16 +12,16 @@ public partial class client
     public int IDClient { get; set; }
 
     [StringLength(30)]
-    public string? Surname { get; set; } = null!;
+    public string Surname { get; set; } = null!;
 
     [StringLength(35)]
-    public string? Name { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
     [StringLength(40)]
-    public string? Lastname { get; set; } = null!;
+    public string Lastname { get; set; } = null!;
 
     [StringLength(100)]
-    public string? Email { get; set; } = null!;
+    public string Email { get; set; } = null!;
 
     [InverseProperty("IDClientsNavigation")]
     public virtual ICollection<coupon> coupons { get; set; } = new List<coupon>();

@@ -37,7 +37,8 @@
       <Folder Include="Screens\Accountant\" />
       <Folder Include="Screens\Admin\EditEmployee\" />
       <Folder Include="Screens\DutyDoctor\AddCoupon\" />
-      <Folder Include="Screens\Prarmacist\" />
+      <Folder Include="Screens\Pharmacist\AddSale\" />
+      <Folder Include="Screens\Pharmacist\ViewSaleReport\" />
       <Folder Include="Screens\SpecialistDoctor\AddRecept\" />
     </ItemGroup>
 

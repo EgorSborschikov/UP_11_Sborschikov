@@ -49,7 +49,7 @@ public partial class VanessaDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=localhost;Username=postgres;Password=Erwin23154;Database=vanessa_company");
+        => optionsBuilder.UseNpgsql("Host=localhost;Database=vanessa_company;Username=postgres;Password=Erwin23154");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -209,10 +209,6 @@ public partial class VanessaDbContext : DbContext
             entity.HasOne(d => d.IDClientNavigation).WithMany(p => p.sale_of_pharmacy_products)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("sale_of_pharmacy_products_IDClient_fkey");
-
-            entity.HasOne(d => d.IDEmployeeNavigation).WithMany(p => p.sale_of_pharmacy_products)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("sale_of_pharmacy_products_IDEmployee_fkey");
 
             entity.HasOne(d => d.IDPharmacyProductNavigation).WithMany(p => p.sale_of_pharmacy_products)
                 .OnDelete(DeleteBehavior.ClientSetNull)

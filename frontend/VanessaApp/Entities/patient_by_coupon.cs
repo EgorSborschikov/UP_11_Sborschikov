@@ -21,13 +21,13 @@ public partial class patient_by_coupon
     public bool RegularInspection { get; set; }
 
     [StringLength(255)]
-    public string? Complaints { get; set; } = null!;
+    public string Complaints { get; set; } = null!;
 
     [StringLength(500)]
     public string? Conclusions { get; set; }
 
     [StringLength(500)]
-    public string? Custody { get; set; } = null!;
+    public string Custody { get; set; } = null!;
 
     [ForeignKey("IDAnimalType")]
     [InverseProperty("patient_by_coupons")]

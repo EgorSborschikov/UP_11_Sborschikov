@@ -43,7 +43,7 @@ public partial class SpecialistDoctorWindow : Window
         }
         else
         {
-            // Обработка случая, когда DataGrid не найден
+            // If DataGrid not found
             Console.WriteLine("DataGrid not found");
         }
     }
