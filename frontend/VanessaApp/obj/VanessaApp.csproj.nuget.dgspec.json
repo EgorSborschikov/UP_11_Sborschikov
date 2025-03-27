@@ -100,6 +100,10 @@
               "target": "Package",
               "version": "[9.0.3, )"
             },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2025.1.6, )"
+            },
             "ReactiveUI": {
               "target": "Package",
               "version": "[20.2.45, )"

@@ -15,6 +15,9 @@
         <entry key="Screens/Admin/Frames/AddEmployeeFrame.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/DutyDoctor/AddCoupon/AddCouponWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/DutyDoctor/DutyDoctorWindow.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/SpecialistDoctor/AddRecept/AddRecept.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/SpecialistDoctor/AddRecept/AddReceptWindow.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/SpecialistDoctor/SpecialistDoctorWindow.axaml" value="VanessaApp.csproj" />
       </map>
     </option>
     <option name="workingDirectorySpecification" value="SolutionDirectory" />

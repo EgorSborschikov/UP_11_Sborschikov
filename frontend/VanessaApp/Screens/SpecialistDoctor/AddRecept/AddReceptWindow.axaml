@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="150"
+        x:Class="VanessaApp.Screens.SpecialistDoctor.AddRecept.AddReceptWindow"
+        Title="Данные о приеме">
+    <StackPanel Margin="10"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Spacing="10">
+
+        <TextBlock Text="История оказания услуги"/>
+
+        <ComboBox x:Name="PatientComboBox"
+                  PlaceholderText="Выберите пациента"
+                  Margin="5"/>
+        <ComboBox x:Name="AnimalTypeComboBox"
+                  PlaceholderText="Выберите тип животного"
+                  Margin="5"/>
+        <ComboBox x:Name="PharmacyProductComboBox"
+                  PlaceholderText="Выберите основной рекомендуемый препарат"
+                  Margin="5"/>
+        <ComboBox x:Name="RegularInspectionComboBox"
+                  PlaceholderText="Регулярный осмотр?"
+                  Margin="5"/>
+
+        <TextBox x:Name="ComplaintTextBox"
+                 Watermark="Жалобы (Анамнез)"
+                 Margin="5"/>
+        <TextBox x:Name="ConclusionTextBox"
+                 Watermark="Заключение"
+                 Margin="5"/>
+        <TextBox x:Name="CustodyTextBox"
+                 Watermark="Медицинские рекомендации"
+                 Margin="5"/>
+
+        <TextBlock Text="Оплата оказываемой услуги"/>
+
+        <TextBox x:Name="PriceTextBox"
+                 Watermark="Цена за оказываемую услугу"
+                 Margin="5"/>
+        <ComboBox x:Name="PaymentMethodComboBox"
+                  PlaceholderText="Способ оплаты"
+                  Margin="5"/>
+
+        <Button Name="SaveReceptButton"
+                Content="Сохранить данные о приеме"
+                Click="SaveReceptButton_Click"/>
+        <Button Name="GenerateDocument"
+                Content="Сформировать справку"
+                Click="GenerateDocument_Click"/>
+    </StackPanel>
+</Window>

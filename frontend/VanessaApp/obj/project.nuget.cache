@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JQmq559ejpo=",
+  "dgSpecHash": "3KIn+HoQbLk=",
   "success": true,
   "projectFilePath": "/home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/VanessaApp.csproj",
   "expectedPackageFiles": [
@@ -70,6 +70,7 @@
     "/home/egor/.nuget/packages/mono.texttemplating/3.0.0/mono.texttemplating.3.0.0.nupkg.sha512",
     "/home/egor/.nuget/packages/npgsql/9.0.3/npgsql.9.0.3.nupkg.sha512",
     "/home/egor/.nuget/packages/npgsql.entityframeworkcore.postgresql/9.0.3/npgsql.entityframeworkcore.postgresql.9.0.3.nupkg.sha512",
+    "/home/egor/.nuget/packages/questpdf/2025.1.6/questpdf.2025.1.6.nupkg.sha512",
     "/home/egor/.nuget/packages/reactiveui/20.2.45/reactiveui.20.2.45.nupkg.sha512",
     "/home/egor/.nuget/packages/runtime.native.system.data.sqlclient.sni/4.7.0/runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "/home/egor/.nuget/packages/runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

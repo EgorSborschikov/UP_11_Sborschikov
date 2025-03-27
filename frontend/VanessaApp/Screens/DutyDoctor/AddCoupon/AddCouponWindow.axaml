@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="150"
         x:Class="VanessaApp.Screens.DutyDoctor.AddCoupon.AddCouponWindow"
-        Title="Записи на прием">
+        Title="Создать новую запись на прием">
         <StackPanel Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <!-- Поля для ввода данных клиента -->
                 <TextBox 

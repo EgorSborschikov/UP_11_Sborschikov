@@ -26,6 +26,7 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.3" />
         <PackageReference Include="Npgsql" Version="9.0.3" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
+        <PackageReference Include="QuestPDF" Version="2025.1.6" />
         <PackageReference Include="ReactiveUI" Version="20.2.45" />
         <PackageReference Include="System.Linq" Version="4.3.0" />
         <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.1" />
@@ -37,12 +38,18 @@
       <Folder Include="Screens\Admin\EditEmployee\" />
       <Folder Include="Screens\DutyDoctor\AddCoupon\" />
       <Folder Include="Screens\Prarmacist\" />
-      <Folder Include="Screens\SpecialistDoctor\" />
+      <Folder Include="Screens\SpecialistDoctor\AddRecept\" />
     </ItemGroup>
 
     <ItemGroup>
         <Page Update="Screens\Admin\EmployeeEditor.axaml">
             <Generator>MSBuild:Compile</Generator>
         </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Screens\SpecialistDoctor\AddRecept\AddReceptWindow.axaml.cs">
+        <DependentUpon>AddReceptWindow.axaml</DependentUpon>
+      </Compile>
     </ItemGroup>
 </Project>

@@ -50,3 +50,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/Screens/DutyDoctor/DutyDoctorWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/Screens/SpecialistDoctor/AddRecept/AddReceptWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/egor/Documents/study/up_11_techology_of_dev_and_secure_db/frontend/VanessaApp/Screens/SpecialistDoctor/SpecialistDoctorWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

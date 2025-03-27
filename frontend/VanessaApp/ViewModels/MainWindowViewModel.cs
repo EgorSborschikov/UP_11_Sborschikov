@@ -1,4 +1,5 @@
 using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using ReactiveUI;
@@ -6,6 +7,7 @@ using VanessaApp.Entities;
 using MsBox.Avalonia;
 using VanessaApp.Screens.Admin;
 using VanessaApp.Screens.DutyDoctor;
+using VanessaApp.Screens.SpecialistDoctor;
 
 namespace VanessaApp.ViewModels;
 
@@ -53,7 +55,11 @@ public class MainWindowViewModel : ReactiveObject
                             break;
                         case 3: // Врач-специалист
                             Console.WriteLine("Specialist doctor role selected.");
-                            // Открыть окно врача-специалиста
+                            var specialistDoctorWindow = new SpecialistDoctorWindow();
+                            if (specialistDoctorWindow != null)
+                            {
+                                specialistDoctorWindow.Show();
+                            }
                             break;
                         case 4: // Дежурный врач приемного отделения
                             Console.WriteLine("Duty doctor role selected.");
@@ -62,7 +68,6 @@ public class MainWindowViewModel : ReactiveObject
                             if (dutyDoctorWindow != null)
                             {
                                 dutyDoctorWindow.Show();
-                                //this.Hide();
                             }
                             else
                             {

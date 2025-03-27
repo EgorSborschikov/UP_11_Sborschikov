@@ -5,41 +5,40 @@ using Avalonia.Markup.Xaml;
 using VanessaApp.Screens.DutyDoctor.AddCoupon;
 using VanessaApp.ViewModels;
 
-namespace VanessaApp.Screens.DutyDoctor
+namespace VanessaApp.Screens.DutyDoctor;
+
+public partial class DutyDoctorWindow : Window
 {
-    public partial class DutyDoctorWindow : Window
+    public DutyDoctorWindow()
     {
-        public DutyDoctorWindow()
+        InitializeComponent();
+        DataContext = new DutyDoctorViewModel();
+    }
+
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
+    }
+
+    private void AddCouponButtonClick(object? sender, RoutedEventArgs e)
+    {
+        var addCouponWindow = new AddCouponWindow();
+        addCouponWindow.Show();
+    }
+
+    private void DeleteAllCouponButtonClick(object? sender, RoutedEventArgs e)
+    {
+        var dataGrid = this.FindControl<DataGrid>("CouponsDataGrid");
+
+        if (dataGrid != null)
         {
-            InitializeComponent();
-            DataContext = new DutyDoctorViewModel();
+            dataGrid.ItemsSource = null;
+            Console.WriteLine("Successfully deleted all coupons");
         }
-
-        private void InitializeComponent()
+        else
         {
-            AvaloniaXamlLoader.Load(this);
-        }
-
-        private void AddCouponButtonClick(object? sender, RoutedEventArgs e)
-        {
-            var addCouponWindow = new AddCouponWindow();
-            addCouponWindow.Show();
-        }
-
-        private void DeleteAllCouponButtonClick(object? sender, RoutedEventArgs e)
-        {
-            var dataGrid = this.FindControl<DataGrid>("CouponsDataGrid");
-
-            if (dataGrid != null)
-            {
-                dataGrid.ItemsSource = null;
-                Console.WriteLine("Successfully deleted all coupons");
-            }
-            else
-            {
-                // Обработка случая, когда DataGrid не найден
-                Console.WriteLine("DataGrid not found");
-            }
+            // Обработка случая, когда DataGrid не найден
+            Console.WriteLine("DataGrid not found");
         }
     }
 }
