@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
@@ -14,14 +12,14 @@ public partial class PharmacistWindow : Window
     public PharmacistWindow()
     {
         InitializeComponent();
-        DataContext = new PharmacistWindowViewModel();
+        DataContext = new PharmacistViewModel();
     }
 
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
     }
-
+    
     private void AddSaleButton_Click(object? sender, RoutedEventArgs e)
     {
         // Add a new Sale

@@ -6,28 +6,27 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="VanessaApp.Screens.Pharmacist.PharmacistWindow"
         Title="Общий список фармацевтических товаров"
-        x:DataType="viewModels:PharmacistWindowViewModel">
+        x:DataType="viewModels:PharmacistViewModel">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <DataGrid
-            x:Name="PharmacyProductDataGrid"
-            ItemsSource="{Binding PharmacyProducts}"
-            AutoGenerateColumns="True"
-            Margin="5"
-            Height="300"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
-            IsReadOnly="True"
-            CanUserReorderColumns="True"
-            CanUserResizeColumns="True"
-            CanUserSortColumns="False"
-            GridLinesVisibility="All"
-            BorderThickness="1"
-            BorderBrush="Gray"/>
+        <DataGrid x:Name="ProductDataGrid"
+                  ItemsSource="{Binding Products}"
+                  AutoGenerateColumns="True"
+                  Margin="5"
+                  Height="300"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  IsReadOnly="True"
+                  CanUserReorderColumns="True"
+                  CanUserResizeColumns="True"
+                  CanUserSortColumns="False"
+                  GridLinesVisibility="All"
+                  BorderThickness="1"
+                  BorderBrush="Gray"/>
         
         <StackPanel Grid.Row="1"
                     DockPanel.Dock="Bottom"

@@ -2,12 +2,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:viewModels="clr-namespace:VanessaApp.ViewModels"
         mc:Ignorable="d"
         d:DesignWidth="600" d:DesignHeight="450"
         Title="Продажа товара"
-        x:Class="VanessaApp.Screens.Pharmacist.AddSale.AddSaleWindow"
-        x:DataType="viewModels:SaleProductViewModel">
+        x:Class="VanessaApp.Screens.Pharmacist.AddSale.AddSaleWindow">
 
     <Grid RowDefinitions="Auto,Auto,*,Auto,Auto"
           ColumnDefinitions="*,*"
@@ -24,10 +22,10 @@
                   Margin="5" Height="250"
                   Name="ProductsDataGrid">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Header="Выбор" Binding="{Binding IsSelected}"/>
-                <DataGridTextColumn Header="Название" Binding="{Binding Name}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Цена" Binding="{Binding Price}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Цена" Binding="{Binding Quantity, Mode=TwoWay}"/>
+                <DataGridCheckBoxColumn Header="Выбор" />
+                <DataGridTextColumn Header="Название" />
+                <DataGridTextColumn Header="Цена" />
+                <DataGridTextColumn Header="Цена" />
             </DataGrid.Columns>
         </DataGrid>
 
