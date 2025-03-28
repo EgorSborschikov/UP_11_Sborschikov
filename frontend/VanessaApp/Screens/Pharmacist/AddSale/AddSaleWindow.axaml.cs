@@ -1,21 +1,21 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using Microsoft.EntityFrameworkCore;
-using MsBox.Avalonia;
-using VanessaApp.Entities;
 using VanessaApp.ViewModels;
 
 namespace VanessaApp.Screens.Pharmacist.AddSale;
 
 public partial class AddSaleWindow : Window
 {
+    private readonly AddSaleViewModel _viewModel;
     public AddSaleWindow()
     {
-        
         InitializeComponent();
+        _viewModel = new AddSaleViewModel();
+        DataContext = _viewModel;
     }
 
     private void InitializeComponent()
@@ -26,6 +26,7 @@ public partial class AddSaleWindow : Window
     // Confirm pay button
     private void PayButton_Click(object? sender, RoutedEventArgs e)
     {
-        
+        Console.WriteLine("Pay button clicked.");
+        _viewModel.Pay();
     }
 }

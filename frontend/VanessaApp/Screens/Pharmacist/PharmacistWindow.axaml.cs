@@ -1,7 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using VanessaApp.Entities;
 using VanessaApp.Screens.Pharmacist.AddSale;
 using VanessaApp.ViewModels;
 
