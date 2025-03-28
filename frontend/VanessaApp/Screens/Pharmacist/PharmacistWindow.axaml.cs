@@ -1,7 +1,9 @@
 using System;
+using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using VanessaApp.Entities;
 using VanessaApp.Screens.Pharmacist.AddSale;
 using VanessaApp.ViewModels;
 
@@ -12,6 +14,7 @@ public partial class PharmacistWindow : Window
     public PharmacistWindow()
     {
         InitializeComponent();
+        DataContext = new PharmacistWindowViewModel();
     }
 
     private void InitializeComponent()
@@ -23,7 +26,10 @@ public partial class PharmacistWindow : Window
     {
         // Add a new Sale
         var addSaleWindow = new AddSaleWindow();
-        addSaleWindow.Show();
+        if (addSaleWindow != null)
+        {
+            addSaleWindow.Show();
+        }
     }
 
     private void ViewSaleReportButton_Click(object? sender, RoutedEventArgs e)

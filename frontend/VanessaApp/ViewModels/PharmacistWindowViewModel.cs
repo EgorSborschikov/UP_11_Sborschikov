@@ -7,11 +7,12 @@ namespace VanessaApp.ViewModels;
 public class PharmacistWindowViewModel 
 {
     private readonly VanessaDbContext _context;
-    public ObservableCollection<PharmacyProductsViewModel> Products { get; set; }
+    public ObservableCollection<PharmacyProductsViewModel> PharmacyProducts { get; set; }
+    
     public PharmacistWindowViewModel()
     {
         _context = new VanessaDbContext();
-        Products = new ObservableCollection<PharmacyProductsViewModel>();
+        PharmacyProducts = new ObservableCollection<PharmacyProductsViewModel>();
         LoadProducts();
     }
     
@@ -25,10 +26,10 @@ public class PharmacistWindowViewModel
                 ProductPrice = pp.Price,
 
             }).ToList();
-        Products.Clear();
+        PharmacyProducts.Clear();
         foreach (var product in products)
         {
-            Products.Add(product);
+            PharmacyProducts.Add(product);
         }
     }
 }

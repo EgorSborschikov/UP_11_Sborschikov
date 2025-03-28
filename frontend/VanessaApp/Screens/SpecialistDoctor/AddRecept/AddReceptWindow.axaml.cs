@@ -6,7 +6,6 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using VanessaApp.Entities;
 using QuestPDF.Fluent;
-using QuestPDF.Infrastructure;
 using QuestPDF.Helpers;
 
 namespace VanessaApp.Screens.SpecialistDoctor.AddRecept;

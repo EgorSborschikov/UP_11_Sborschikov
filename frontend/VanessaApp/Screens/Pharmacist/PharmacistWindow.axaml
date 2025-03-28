@@ -15,7 +15,7 @@
         
         <DataGrid
             x:Name="PharmacyProductDataGrid"
-            ItemsSource="{Binding Products}"
+            ItemsSource="{Binding PharmacyProducts}"
             AutoGenerateColumns="True"
             Margin="5"
             Height="300"

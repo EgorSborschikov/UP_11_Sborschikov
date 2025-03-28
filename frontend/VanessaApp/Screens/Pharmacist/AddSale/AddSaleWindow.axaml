@@ -2,51 +2,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VanessaApp.ViewModels"
+        xmlns:viewModels="clr-namespace:VanessaApp.ViewModels"
         mc:Ignorable="d"
         d:DesignWidth="600" d:DesignHeight="450"
-        Title="Продажа товара">
-    
-    <!--<Grid RowDefinitions="Auto,Auto,*,Auto,Auto" 
+        Title="Продажа товара"
+        x:Class="VanessaApp.Screens.Pharmacist.AddSale.AddSaleWindow"
+        x:DataType="viewModels:SaleProductViewModel">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto,Auto"
           ColumnDefinitions="*,*"
           Margin="10">
-        
-         
+
         <TextBlock Text="Выберите клиента:" Margin="5"/>
         <ComboBox Grid.Row="0" Grid.Column="0"
-                  ItemsSource="{Binding Clients}"
-                  SelectedItem="{Binding SelectedClient}"
-                  DisplayMemberBinding="{Binding FullName}"
-                  Margin="5" Width="300" HorizontalAlignment="Left"/>
-                  
+                  Margin="5" Width="300" HorizontalAlignment="Left"
+                  Name="ClientsComboBox" PlaceholderText="Клиенты"/>
+
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Выберите товары:" Margin="5"/>
         <DataGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
-                  ItemsSource="{Binding Products}"
                   AutoGenerateColumns="False"
-                  Margin="5" Height="250">
+                  Margin="5" Height="250"
+                  Name="ProductsDataGrid">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="Выбор" Binding="{Binding IsSelected}"/>
-                <DataGridTextColumn Header="Название" Binding="{Binding Product.Name}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Цена" Binding="{Binding Product.Price}" IsReadOnly="True"/>
-                <DataGridTemplateColumn Header="Количество">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <NumericUpDown Minimum="1" Value="{Binding Quantity}" Width="80"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Quantity, Mode=TwoWay}"/>
             </DataGrid.Columns>
         </DataGrid>
 
+        <TextBlock Grid.Row="3" Grid.Column="0"
+                   Margin="5" FontWeight="Bold"/>
 
-        <TextBlock Grid.Row="3" Grid.Column="0" 
-                 Text="{Binding TotalPrice, StringFormat='Итого: {0} руб.'}"
-                 Margin="5" FontWeight="Bold"/>
-
-
-        <Button Grid.Row="4" Grid.Column="1" 
-              Content="Оплатить" 
-              Click="PayButton_Click"
-              Margin="5" Width="120" HorizontalAlignment="Right"/>
-    </Grid> -->
-</Window> 
+        <Button Grid.Row="4" Grid.Column="1"
+                Content="Оплатить"
+                Click="PayButton_Click"
+                Margin="5" Width="120" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>

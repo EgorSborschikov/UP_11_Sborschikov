@@ -6,7 +6,7 @@
 ### Функциональные возможности
 
 ### Технологический стек:
-- **Frontend(Desktop)**: Avalonia + ReactiveUI;
+- **Frontend(Desktop)**: AvaloniaUI;
 - **Object-Relational Mapping**: EntityFrameworkCore + Npgsql;
 - **Datastorage**: PostgreSQL;
 - **Containerize**: Docker;
