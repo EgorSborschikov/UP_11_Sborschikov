@@ -53,4 +53,8 @@
         <DependentUpon>AddReceptWindow.axaml</DependentUpon>
       </Compile>
     </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Screens\Pharmacist\DeleteProduct\DeleteProductWindow.axaml" />
+    </ItemGroup>
 </Project>

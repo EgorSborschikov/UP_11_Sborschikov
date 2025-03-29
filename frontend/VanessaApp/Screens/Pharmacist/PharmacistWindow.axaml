@@ -31,8 +31,8 @@
         </DataGrid>
         
         <StackPanel 
-            DockPanel.Dock="Bottom"
             Width="200"
+            Margin="10"
             Spacing="10"
             Orientation="Horizontal"
             VerticalAlignment="Center"
@@ -40,6 +40,7 @@
             
             <Button Name="AddSaleButton" Content="Продажа товаров" Click="AddSaleButton_Click"/>
             <Button Name="ViewSaleReportButton" Content="Отчет по продажам" Click="ViewSaleReportButton_Click"/>
+            <Button Name="EditProductButton" Content="Опции с товарами" Click="CRUDProductButton_Click"/>
         </StackPanel>
     </StackPanel>
 </Window>

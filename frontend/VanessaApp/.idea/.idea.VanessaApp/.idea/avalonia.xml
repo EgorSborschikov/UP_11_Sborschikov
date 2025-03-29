@@ -16,6 +16,9 @@
         <entry key="Screens/DutyDoctor/AddCoupon/AddCouponWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/DutyDoctor/DutyDoctorWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Pharmacist/AddSale/AddSaleWindow.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/Pharmacist/CRUDProduct/CRUDProductWindow.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/Pharmacist/DeleteProduct/DeleteProductWindow.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/Pharmacist/EditProduct/EditProductWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Pharmacist/PharmacistWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Pharmacist/ViewSaleReport/ViewSaleReportWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Prarmacist/PharmacistWindow.axaml" value="VanessaApp.csproj" />

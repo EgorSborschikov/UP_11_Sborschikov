@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:additionalPharmacistWindowViewModel="clr-namespace:VanessaApp.ViewModels.AdditionalPharmacistWindowViewModel"
+        mc:Ignorable="d"
+        d:DesignWidth="600" d:DesignHeight="450"
+        Title="Опции с товарами"
+        x:Class="VanessaApp.Screens.Pharmacist.CRUDProduct.CRUDProductWindow"
+        x:DataType="additionalPharmacistWindowViewModel:CRUDWithProductsViewModel">
+    
+    <StackPanel Margin="10" Spacing="10">
+        <StackPanel Margin="5" Spacing="10">
+            <TextBlock Text="Отредактировать выбранный товар:" FontWeight="Bold"/>
+            <ComboBox x:Name="SelectProductId" PlaceholderText="Выберите ID продукта" 
+                      ItemsSource="{Binding ProductIds}"
+                      SelectedItem="{Binding SelectedProductId, Mode=TwoWay}"/>
+            <TextBox Text="{Binding EditProductName, Mode=TwoWay}" Watermark="Новое название выбранного продукта"/>
+            <TextBox Text="{Binding EditProductPrice, Mode=TwoWay}"  Watermark="Новая цена выбранного продукта"/>
+            
+            <Button Name="EditProductButton" Content="Сохранить изменения" Click="SaveEditButton_Click" Width="200"/>
+        </StackPanel>
+        
+        <StackPanel Margin="5" Spacing="10">
+            <TextBlock Text="Добавить новый товар:" FontWeight="Bold"/>
+            <TextBox Text="{Binding NewProductId}" Watermark="Уникальный номер товара (Не должен совпадать с существующими)"/>
+            <TextBox Text="{Binding NewProductName, Mode=TwoWay}" 
+                     Watermark="Название товара"/>
+            <TextBox Text="{Binding NewProductPrice, Mode=TwoWay}" 
+                     Watermark="Цена товара"/>
+            
+            <Button Name="AddProductButton" Content="Добавить товар в общий список" Click="AddProductButton_Click" Width="200"/>
+        </StackPanel>
+        
+        <StackPanel Margin="5" Spacing="10">
+            <TextBlock Text="Удалить выбранный товар:" FontWeight="Bold"/>
+            <ComboBox x:Name="SelectDelProductId"
+                      PlaceholderText="Выберите ID продукта"
+                      ItemsSource="{Binding DeleteProductIds}"
+                      SelectedItem="{Binding SelectedDelProductId, Mode=TwoWay}"/>
+            
+            <Button Name="SaveDeleteButton" Content="Удалить товар из общего списка" Click="SaveDeleteButton_Click" Width="200"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

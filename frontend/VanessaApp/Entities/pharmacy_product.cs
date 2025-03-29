@@ -9,9 +9,10 @@ namespace VanessaApp.Entities;
 public partial class pharmacy_product
 {
     [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int IDPharmacyProduct { get; set; }
 
-    [StringLength(50)]
+    [StringLength(100)]
     public string ProductName { get; set; } = null!;
 
     [Column(TypeName = "money")]

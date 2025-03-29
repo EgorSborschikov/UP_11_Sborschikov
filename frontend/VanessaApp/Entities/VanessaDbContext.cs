@@ -175,8 +175,8 @@ public partial class VanessaDbContext : DbContext
         modelBuilder.Entity<pharmacy_product>(entity =>
         {
             entity.HasKey(e => e.IDPharmacyProduct).HasName("pharmacy_products_pkey");
-
-            entity.Property(e => e.ProductName).IsFixedLength();
+            entity.Property(e => e.IDPharmacyProduct)
+                .ValueGeneratedOnAdd(); 
         });
 
         modelBuilder.Entity<pickup_point>(entity =>

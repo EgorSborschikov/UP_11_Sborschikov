@@ -2,6 +2,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using VanessaApp.Screens.Pharmacist.AddSale;
+using VanessaApp.Screens.Pharmacist.CRUDProduct;
 using VanessaApp.Screens.Pharmacist.ViewSaleReport;
 using VanessaApp.ViewModels;
 
@@ -37,6 +38,14 @@ public partial class PharmacistWindow : Window
         if (viewSaleReportWindow != null)
         {
             viewSaleReportWindow.Show();
+        }
+    }
+
+    private void CRUDProductButton_Click(object? sender, RoutedEventArgs e)
+    {
+        var editProductWindow = new CRUDProductWindow();
+        if(editProductWindow != null){
+            editProductWindow.Show();
         }
     }
 }
