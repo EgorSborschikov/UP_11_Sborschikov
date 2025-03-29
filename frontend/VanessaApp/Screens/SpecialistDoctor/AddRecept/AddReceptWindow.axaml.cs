@@ -4,6 +4,7 @@ using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using MsBox.Avalonia;
 using VanessaApp.Entities;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
@@ -277,11 +278,12 @@ public partial class AddReceptWindow : Window
 
             // Save the PDF bytes to a file
             File.WriteAllBytes(filePath, pdfBytes);
-
+            MessageBoxManager.GetMessageBoxStandard("Успешно!","Выписка успешно сформирована").ShowAsync();
             Console.WriteLine($"Report generated successfully: {filePath}");
         }
         catch (Exception ex)
         {
+            MessageBoxManager.GetMessageBoxStandard("Ошибка!","Произошла ошибка при формировании выписки").ShowAsync();
             Console.WriteLine($"Error generating report: {ex.Message}");
         }
     }

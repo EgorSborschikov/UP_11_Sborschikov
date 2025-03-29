@@ -11,7 +11,6 @@
 
     <StackPanel Margin="10" Spacing="10">
 
-        <!-- Client select -->
         <TextBlock Text="Выберите клиента:" Margin="5"/>
         <ComboBox Name="ClientsComboBox"
                   ItemsSource="{Binding Clients}"
@@ -25,7 +24,6 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <!-- Busket -->
         <TextBlock Text="Выберите товары:" Margin="5"/>
         <DataGrid x:Name="SaleItemDataGrid"
                   ItemsSource="{Binding ItemProducts}"
@@ -42,22 +40,19 @@
                   BorderBrush="Gray"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <!-- Столбец для названия товара -->
                 <DataGridTextColumn Header="Название товара" Binding="{Binding ItemName}" IsReadOnly="True"/>
 
-                <!-- Столбец для цены товара -->
                 <DataGridTextColumn Header="Цена" Binding="{Binding ItemPrice}" IsReadOnly="True"/>
 
-                <!-- Столбец с чекбоксом для выбора товара -->
                 <DataGridCheckBoxColumn Header="Выбран" Binding="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <!-- Столбец для ввода количества -->
                 <DataGridTextColumn Header="Количество" Binding="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </DataGrid.Columns>
         </DataGrid>
+        
+        <TextBlock Text="Полная стоимость покупки:" Margin="5" FontWeight="Bold"/>
+        <TextBlock Text="{Binding TotalPrice}"/>
 
-
-        <!-- Pay -->
         <Button Content="Оплатить"
                 Click="PayButton_Click"
                 Margin="5" Width="120" HorizontalAlignment="Center"/>

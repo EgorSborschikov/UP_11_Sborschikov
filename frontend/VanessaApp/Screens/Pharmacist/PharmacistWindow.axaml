@@ -7,36 +7,39 @@
         x:Class="VanessaApp.Screens.Pharmacist.PharmacistWindow"
         Title="Общий список фармацевтических товаров"
         x:DataType="viewModels:PharmacistViewModel">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+    <StackPanel Margin="10" Spacing="10">
         
         <DataGrid x:Name="ProductDataGrid"
                   ItemsSource="{Binding Products}"
-                  AutoGenerateColumns="True"
                   Margin="5"
                   Height="300"
                   HorizontalAlignment="Stretch"
                   VerticalAlignment="Stretch"
-                  IsReadOnly="True"
+                  IsReadOnly="False"
                   CanUserReorderColumns="True"
                   CanUserResizeColumns="True"
                   CanUserSortColumns="False"
                   GridLinesVisibility="All"
                   BorderThickness="1"
-                  BorderBrush="Gray"/>
+                  BorderBrush="Gray"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Цена за одну единицу" Binding="{Binding Price, StringFormat=C}"/>
+            </DataGrid.Columns>
+        </DataGrid>
         
-        <StackPanel Grid.Row="1"
-                    DockPanel.Dock="Bottom"
-                    Width="200"
-                    Spacing="10"
-                    Orientation="Horizontal"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+        <StackPanel 
+            DockPanel.Dock="Bottom"
+            Width="200"
+            Spacing="10"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+            
             <Button Name="AddSaleButton" Content="Продажа товаров" Click="AddSaleButton_Click"/>
             <Button Name="ViewSaleReportButton" Content="Отчет по продажам" Click="ViewSaleReportButton_Click"/>
         </StackPanel>
-    </Grid>
+    </StackPanel>
 </Window>

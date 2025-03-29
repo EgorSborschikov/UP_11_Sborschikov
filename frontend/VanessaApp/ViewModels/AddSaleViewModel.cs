@@ -2,6 +2,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using MsBox.Avalonia;
 using VanessaApp.Entities;
 
 namespace VanessaApp.ViewModels;
@@ -10,10 +11,11 @@ namespace VanessaApp.ViewModels;
 /// View model for add sale function
 /// </summary>
 
-public class AddSaleViewModel
+public class AddSaleViewModel : INotifyPropertyChanged
 {
     private VanessaDbContext _context;
     private ClientViewModel _selectedClient;
+    private decimal _totalPrice;
     public ObservableCollection<SaleItemViewModel> ItemProducts { get; set; }
     public ObservableCollection<ClientViewModel> Clients { get; set; }
 
@@ -24,6 +26,16 @@ public class AddSaleViewModel
         {
             _selectedClient = value;
             OnPropertyChanged(nameof(SelectedClient));
+        }
+    }
+
+    public decimal TotalPrice
+    {
+        get => _totalPrice;
+        set
+        {
+            _totalPrice = value;
+            OnPropertyChanged(nameof(TotalPrice));
         }
     }
     
@@ -40,6 +52,11 @@ public class AddSaleViewModel
         Clients = new ObservableCollection<ClientViewModel>();
         LoadItems();
         LoadClients();
+        
+        foreach (var item in ItemProducts)
+        {
+            item.PropertyChanged += Item_PropertyChanged;
+        }
     }
 
     private void LoadItems()
@@ -58,6 +75,7 @@ public class AddSaleViewModel
         foreach (var saleItem in saleItems)
         {
             ItemProducts.Add(saleItem);
+            saleItem.PropertyChanged += Item_PropertyChanged;
         }
     }
 
@@ -109,6 +127,7 @@ public class AddSaleViewModel
                     _context.sale_of_pharmacy_products.Add(sale);
                 }
             }
+            
             _context.SaveChanges();
             Console.WriteLine("Sales saved successfully.");
         }
@@ -117,7 +136,21 @@ public class AddSaleViewModel
             Console.WriteLine($"Error saving sales: {ex.Message}");
         }
     }
+    
+    private void Item_PropertyChanged(object sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(SaleItemViewModel.IsSelected) || e.PropertyName == nameof(SaleItemViewModel.Quantity))
+        {
+            CalculateTotalPrice();
+        }
+    }
 
+    private void CalculateTotalPrice()
+    {
+        TotalPrice = ItemProducts
+            .Where(item => item.IsSelected && item.Quantity > 0)
+            .Sum(item => item.Quantity * item.ItemPrice);
+    }
 }
 
 /// <summary>
@@ -162,5 +195,5 @@ public class SaleItemViewModel : INotifyPropertyChanged
 public class ClientViewModel
 {
     public int ClientId { get; set; }
-    public string DisplayName { get; set; }
+    public string? DisplayName { get; set; }
 }

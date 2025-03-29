@@ -2,6 +2,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using VanessaApp.Screens.Pharmacist.AddSale;
+using VanessaApp.Screens.Pharmacist.ViewSaleReport;
 using VanessaApp.ViewModels;
 
 namespace VanessaApp.Screens.Pharmacist;
@@ -32,5 +33,10 @@ public partial class PharmacistWindow : Window
     private void ViewSaleReportButton_Click(object? sender, RoutedEventArgs e)
     {
         // View sale history
+        var viewSaleReportWindow = new ViewSaleReportWindow();
+        if (viewSaleReportWindow != null)
+        {
+            viewSaleReportWindow.Show();
+        }
     }
 }
