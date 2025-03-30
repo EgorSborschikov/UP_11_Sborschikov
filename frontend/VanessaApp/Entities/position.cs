@@ -16,4 +16,7 @@ public partial class position
 
     [InverseProperty("IDPositionNavigation")]
     public virtual ICollection<employee> employees { get; set; } = new List<employee>();
+
+    [InverseProperty("IDPositionNavigation")]
+    public virtual ICollection<salary> salaries { get; set; } = new List<salary>();
 }

@@ -17,9 +17,15 @@ public partial class online_order
 
     public int IDPickupPoint { get; set; }
 
+    public int IDPaymentMethod { get; set; }
+
     [ForeignKey("IDClient")]
     [InverseProperty("online_orders")]
     public virtual client IDClientNavigation { get; set; } = null!;
+
+    [ForeignKey("IDPaymentMethod")]
+    [InverseProperty("online_orders")]
+    public virtual payments_method IDPaymentMethodNavigation { get; set; } = null!;
 
     [ForeignKey("IDPharmacyProduct")]
     [InverseProperty("online_orders")]

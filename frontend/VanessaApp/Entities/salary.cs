@@ -11,12 +11,12 @@ public partial class salary
     [Key]
     public int IDSalaries { get; set; }
 
-    public int IDEmployee { get; set; }
+    public int IDPosition { get; set; }
 
     [Column(TypeName = "money")]
-    public decimal Salaries { get; set; }
+    public decimal Salary { get; set; }
 
-    [ForeignKey("IDEmployee")]
+    [ForeignKey("IDPosition")]
     [InverseProperty("salaries")]
-    public virtual employee IDEmployeeNavigation { get; set; } = null!;
+    public virtual position IDPositionNavigation { get; set; } = null!;
 }

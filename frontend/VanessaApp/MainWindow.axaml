@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="VanessaApp.MainWindow"
-        Title="VanessaApp">
+        Title="Вход в систему">
    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="5">
        <StackPanel>
            <TextBlock Text = "АВТОРИЗАЦИЯ" FontSize="20" Margin="0,0,0,20"/>
@@ -14,7 +14,11 @@
            <TextBox Name="PasswordBox" Watermark="Пароль" Width="300" Margin="0,0,0,10" PasswordChar="*"/>
        </StackPanel>
        <StackPanel>
-           <Button Content="Войти" Width="300" Margin="10,0,0,10" Click="OnLoginClick"/>
+           <Button Name="OnLogin" Content="Войти" Width="300" Margin="10" Click="OnLoginClick"/>
+       </StackPanel>
+       
+       <StackPanel>
+           <Button Name="OnLoginGuest" Content="Войти как гость" Width="300" Margin="10" Click="OnLoginGuest_Click"/>
        </StackPanel>
    </StackPanel>
 </Window>

@@ -49,7 +49,4 @@ public partial class employee
 
     [InverseProperty("IDEmployeeNavigation")]
     public virtual ICollection<coupon> coupons { get; set; } = new List<coupon>();
-
-    [InverseProperty("IDEmployeeNavigation")]
-    public virtual ICollection<salary> salaries { get; set; } = new List<salary>();
 }

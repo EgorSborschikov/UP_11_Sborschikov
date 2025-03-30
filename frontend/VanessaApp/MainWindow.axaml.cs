@@ -3,6 +3,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using MsBox.Avalonia;
 using VanessaApp.Entities;
+using VanessaApp.Screens.OnlineOrders;
 using VanessaApp.ViewModels;
 
 namespace VanessaApp;
@@ -31,6 +32,15 @@ public partial class MainWindow : Window
         else
         {
             MessageBoxManager.GetMessageBoxStandard("Ошибка", "Элементы интерфейса проинциализировались с ошибкой!").ShowAsync();
+        }
+    }
+
+    private void OnLoginGuest_Click(object? sender, RoutedEventArgs e)
+    {
+        var onlineOrderWindow = new OnlineOrderWindow();
+        if (onlineOrderWindow != null)
+        {
+            onlineOrderWindow.Show();
         }
     }
 }

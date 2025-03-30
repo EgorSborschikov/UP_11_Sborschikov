@@ -7,6 +7,7 @@
         <entry key="EmployeeEditor.axaml" value="VanessaApp.csproj" />
         <entry key="Frame.axaml" value="VanessaApp.csproj" />
         <entry key="MainWindow.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/Accountant/AccountantWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Admin/AddEmployee/AddEmployeeWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Admin/AdminWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Admin/DeleteEmployee/DeleteEmployeeWindow.axaml" value="VanessaApp.csproj" />
@@ -15,6 +16,7 @@
         <entry key="Screens/Admin/Frames/AddEmployeeFrame.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/DutyDoctor/AddCoupon/AddCouponWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/DutyDoctor/DutyDoctorWindow.axaml" value="VanessaApp.csproj" />
+        <entry key="Screens/OnlineOrders/OnlineOrderWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Pharmacist/AddSale/AddSaleWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Pharmacist/CRUDProduct/CRUDProductWindow.axaml" value="VanessaApp.csproj" />
         <entry key="Screens/Pharmacist/DeleteProduct/DeleteProductWindow.axaml" value="VanessaApp.csproj" />

@@ -9,7 +9,6 @@ namespace VanessaApp.Entities;
 public partial class pharmacy_product
 {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int IDPharmacyProduct { get; set; }
 
     [StringLength(100)]

@@ -15,5 +15,8 @@ public partial class payments_method
     public string Method { get; set; } = null!;
 
     [InverseProperty("IDPaymentMethodNavigation")]
+    public virtual ICollection<online_order> online_orders { get; set; } = new List<online_order>();
+
+    [InverseProperty("IDPaymentMethodNavigation")]
     public virtual ICollection<payment> payments { get; set; } = new List<payment>();
 }

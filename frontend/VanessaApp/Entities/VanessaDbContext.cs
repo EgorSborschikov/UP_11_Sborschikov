@@ -126,6 +126,10 @@ public partial class VanessaDbContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("online_orders_IDClient_fkey");
 
+            entity.HasOne(d => d.IDPaymentMethodNavigation).WithMany(p => p.online_orders)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("online_orders_IDPaymentMethod_fkey");
+
             entity.HasOne(d => d.IDPharmacyProductNavigation).WithMany(p => p.online_orders)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("online_orders_IDPharmacyProduct_fkey");
@@ -175,8 +179,6 @@ public partial class VanessaDbContext : DbContext
         modelBuilder.Entity<pharmacy_product>(entity =>
         {
             entity.HasKey(e => e.IDPharmacyProduct).HasName("pharmacy_products_pkey");
-            entity.Property(e => e.IDPharmacyProduct)
-                .ValueGeneratedOnAdd(); 
         });
 
         modelBuilder.Entity<pickup_point>(entity =>
@@ -197,9 +199,9 @@ public partial class VanessaDbContext : DbContext
         {
             entity.HasKey(e => e.IDSalaries).HasName("salaries_pkey");
 
-            entity.HasOne(d => d.IDEmployeeNavigation).WithMany(p => p.salaries)
+            entity.HasOne(d => d.IDPositionNavigation).WithMany(p => p.salaries)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("salaries_IDEmployee_fkey");
+                .HasConstraintName("salaries_IDPosition_fkey");
         });
 
         modelBuilder.Entity<sale_of_pharmacy_product>(entity =>
