@@ -1,0 +1,42 @@
+# Используем официальный образ .NET SDK для сборки приложения
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
+
+# Устанавливаем рабочую директорию
+WORKDIR /app
+
+# Копируем файл решения и проекты
+COPY *.sln .
+COPY *.csproj ./
+RUN dotnet restore
+
+# Копируем все файлы в контейнер
+COPY . ./
+
+# Собираем проект
+RUN dotnet publish -c Release -o out
+
+# Используем официальный образ Ubuntu для запуска приложения
+FROM ubuntu:20.04
+
+# Устанавливаем необходимые зависимости для X11
+RUN apt-get update && \
+    apt-get install -y \
+    libgtk-3-0 \
+    libX11-6 \
+    libXrender1 \
+    libxrandr2 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Устанавливаем рабочую директорию
+WORKDIR /app
+
+# Копируем скомпилированное приложение в контейнер
+COPY --from=build-env /app/out .
+
+# Разрешаем доступ к X11 для GUI
+ENV DISPLAY=:0
+RUN echo "export DISPLAY=:0" >> ~/.bashrc
+
+# Определяем команду для запуска приложения
+ENTRYPOINT ["./YourAvaloniaAppExecutable"] 
