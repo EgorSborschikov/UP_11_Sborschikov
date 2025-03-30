@@ -7,6 +7,10 @@ using VanessaApp.Screens.SpecialistDoctor.AddRecept;
 
 namespace VanessaApp.ViewModels;
 
+/// <summary>
+/// Specialist-Doctor-Panel view model
+/// </summary>
+
 public class SpecialistDoctorViewModel
 {
     private readonly VanessaDbContext _context;

@@ -7,6 +7,10 @@ using VanessaApp.ViewModels;
 
 namespace VanessaApp.Screens.DutyDoctor;
 
+/// <summary>
+/// Logic of interaction with DutyDoctorWindow
+/// </summary>
+
 public partial class DutyDoctorWindow : Window
 {
     public DutyDoctorWindow()

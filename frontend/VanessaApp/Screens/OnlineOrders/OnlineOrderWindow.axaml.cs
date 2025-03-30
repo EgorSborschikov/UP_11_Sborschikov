@@ -1,10 +1,13 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using VanessaApp.Entities;
 using VanessaApp.ViewModels;
 
 namespace VanessaApp.Screens.OnlineOrders;
+
+/// <summary>
+/// Logic of interaction with OnlineOrderWindow
+/// </summary>
 
 public partial class OnlineOrderWindow : Window
 {

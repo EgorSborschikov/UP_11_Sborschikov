@@ -8,6 +8,10 @@ using VanessaApp.ViewModels;
 
 namespace VanessaApp.Screens.Pharmacist.AddSale;
 
+/// <summary>
+/// Logic of interaction with AddSaleWindow
+/// </summary>
+
 public partial class AddSaleWindow : Window
 {
     private readonly AddSaleViewModel _viewModel;

@@ -6,6 +6,10 @@ using VanessaApp.ViewModels;
 
 namespace VanessaApp.Screens.Admin.DeleteEmployee;
 
+/// <summary>
+/// Logic of interaction with DeleteEmployeeWindow
+/// </summary>
+
 public partial class DeleteEmployeeWindow : Window
 {
     public AdminWindowViewModel ViewModel { get; }

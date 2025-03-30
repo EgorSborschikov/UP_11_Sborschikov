@@ -11,6 +11,10 @@ using VanessaApp.ViewModels;
 
 namespace VanessaApp.Screens.SpecialistDoctor;
 
+/// <summary>
+/// Logic of interaction with SpecialistDoctorWindow
+/// </summary>
+
 public partial class SpecialistDoctorWindow : Window
 {
     public SpecialistDoctorWindow()

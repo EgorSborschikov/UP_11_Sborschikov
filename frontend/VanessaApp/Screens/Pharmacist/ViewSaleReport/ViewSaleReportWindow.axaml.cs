@@ -12,6 +12,10 @@ using Path = System.IO.Path;
 
 namespace VanessaApp.Screens.Pharmacist.ViewSaleReport;
 
+/// <summary>
+/// Logic of interaction with ViewSaleReportWindow
+/// </summary>
+
 public partial class ViewSaleReportWindow : Window
 {
     private readonly ViewSaleReportViewModel _viewModel;

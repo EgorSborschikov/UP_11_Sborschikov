@@ -9,6 +9,10 @@ using VanessaApp.ViewModels;
 
 namespace VanessaApp.Screens.Admin.EditEmployee;
 
+/// <summary>
+/// Logic of interaction with EditEmployeeWindow
+/// </summary>
+
 public partial class EditEmployeeWindow : Window
 {
     public AdminWindowViewModel ViewModel { get; }

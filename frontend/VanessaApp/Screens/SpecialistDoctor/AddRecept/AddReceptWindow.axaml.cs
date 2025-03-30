@@ -11,6 +11,10 @@ using QuestPDF.Helpers;
 
 namespace VanessaApp.Screens.SpecialistDoctor.AddRecept;
 
+/// <summary>
+/// Logic of interaction with AddReseptWindow
+/// </summary>
+
 public partial class AddReceptWindow : Window
 {
     private readonly VanessaDbContext _context;

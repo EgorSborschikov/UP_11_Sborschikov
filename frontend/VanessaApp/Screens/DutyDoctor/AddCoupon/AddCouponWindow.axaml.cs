@@ -3,10 +3,13 @@ using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using Microsoft.EntityFrameworkCore;
 using VanessaApp.Entities;
 
 namespace VanessaApp.Screens.DutyDoctor.AddCoupon;
+
+/// <summary>
+/// Logic of interaction with AddCouponWindow
+/// </summary>
 
 public partial class AddCouponWindow : Window
 {

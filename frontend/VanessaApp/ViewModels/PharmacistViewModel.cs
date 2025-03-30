@@ -4,6 +4,10 @@ using VanessaApp.Entities;
 
 namespace VanessaApp.ViewModels;
 
+/// <summary>
+/// Pharmacist-Main-Panel view model
+/// </summary>
+
 public class PharmacistViewModel
 {
     private VanessaDbContext _context;

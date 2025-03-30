@@ -5,6 +5,10 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using VanessaApp.Entities;
 
+/// <summary>
+/// Create online order view model
+/// </summary>
+
 namespace VanessaApp.ViewModels
 {
     public class OnlineOrderViewModel : INotifyPropertyChanged

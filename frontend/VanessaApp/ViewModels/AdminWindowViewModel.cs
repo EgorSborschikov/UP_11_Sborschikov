@@ -13,6 +13,7 @@ namespace VanessaApp.ViewModels;
 /// <summary>
 /// Admin-Panel view model
 /// </summary>
+
 public class AdminWindowViewModel : ReactiveObject
 {
     private readonly VanessaDbContext _context;

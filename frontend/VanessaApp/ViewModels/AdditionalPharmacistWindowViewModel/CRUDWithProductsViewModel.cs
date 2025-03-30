@@ -7,6 +7,10 @@ using VanessaApp.Entities;
 
 namespace VanessaApp.ViewModels.AdditionalPharmacistWindowViewModel;
 
+/// <summary>
+/// Pharmacist-Additional-Panels view model
+/// </summary>
+
 public class CRUDWithProductsViewModel : INotifyPropertyChanged
 {
     private readonly VanessaDbContext _context;

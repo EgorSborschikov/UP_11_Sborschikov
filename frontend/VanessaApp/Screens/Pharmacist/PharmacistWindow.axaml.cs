@@ -8,6 +8,10 @@ using VanessaApp.ViewModels;
 
 namespace VanessaApp.Screens.Pharmacist;
 
+/// <summary>
+/// Logic of interaction with PharmacistWindow
+/// </summary>
+
 public partial class PharmacistWindow : Window
 {
     public PharmacistWindow()
