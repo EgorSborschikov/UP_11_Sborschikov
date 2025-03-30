@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VanessaApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df1d4e71b7584b0293d195917e1fb6258cbaefa1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3438d4c77a33d27d00138ff989965c643764ac3")]
 [assembly: System.Reflection.AssemblyProductAttribute("VanessaApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VanessaApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

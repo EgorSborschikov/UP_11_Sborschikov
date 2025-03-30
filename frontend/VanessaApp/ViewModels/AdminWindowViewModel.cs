@@ -146,9 +146,9 @@ public class AdminWindowViewModel : ReactiveObject
                 
                 transaction.Commit();
                 Console.WriteLine("Transaction committed.");
-                
-                //LoadEmployees();
                 Console.WriteLine("Success added new employee.");
+                MessageBoxManager.GetMessageBoxStandard("Успех", "Сотрудник был успешно добавлен").ShowAsync();
+                LoadEmployees();
             }
         }
         catch (Exception ex)
@@ -184,6 +184,8 @@ public class AdminWindowViewModel : ReactiveObject
                 _context.SaveChanges();
                 LoadEmployees();
                 Console.WriteLine("Successfully updated employee.");
+                MessageBoxManager.GetMessageBoxStandard("Успех", "Данные сотрудника были успешно изменены").ShowAsync();
+                LoadEmployees();
             }
             else
             {
@@ -200,8 +202,36 @@ public class AdminWindowViewModel : ReactiveObject
     
     public void DeleteEmployee(int employeeId)
     {
-        
+        try
+        {
+            var employee = _context.employees.Find(employeeId);
+            if (employee != null)
+            {
+                _context.employees.Remove(employee);
+                _context.SaveChanges(); 
+                var auth = _context.auths.Find(employee.IDAuth);
+                if (auth != null)
+                {
+                    _context.auths.Remove(auth);
+                    _context.SaveChanges(); 
+                }
+                Console.WriteLine("Successfully deleted employee.");
+                MessageBoxManager.GetMessageBoxStandard("Успех", "Сотрудник был успешно удален").ShowAsync();
+                LoadEmployees();
+            }
+            else
+            {
+                Console.WriteLine("Employee not found.");
+                MessageBoxManager.GetMessageBoxStandard("Ошибка", "Сотрудник не найден.").ShowAsync();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error deleting employee: {ex.Message}");
+            MessageBoxManager.GetMessageBoxStandard("Ошибка", "Произошла ошибка при удалении данных сотрудника.").ShowAsync();
+        }
     }
+
 
     private void LoadBranches()
     {

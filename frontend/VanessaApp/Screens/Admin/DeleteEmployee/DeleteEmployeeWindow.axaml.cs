@@ -24,6 +24,7 @@ public partial class DeleteEmployeeWindow : Window
 
     private void DeleteButton_Click(object? sender, RoutedEventArgs e)
     {
-        
+        ViewModel.DeleteEmployee(ViewModel.SelectedEmployeeId);
+        this.Close();
     }
 }
