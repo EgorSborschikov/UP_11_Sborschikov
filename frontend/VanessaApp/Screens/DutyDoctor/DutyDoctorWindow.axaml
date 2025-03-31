@@ -3,21 +3,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:VanessaApp.ViewModels"
-        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="150"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="VanessaApp.Screens.DutyDoctor.DutyDoctorWindow"
         Title="Записи на прием"
         x:DataType="viewModels:DutyDoctorViewModel">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/> <!-- DataGrid Row -->
-            <RowDefinition Height="Auto"/> <!-- Button Row -->
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <DataGrid x:Name="CouponsDataGrid"
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="Aqua" Height="100">
+            <Image Source="/Images/VanessaLogo.png" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" Height="100"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
+                  x:Name="CouponsDataGrid"
                   ItemsSource="{Binding Coupons}"
                   AutoGenerateColumns="True"
                   Margin="5"
-                  Height="300"
                   HorizontalAlignment="Stretch"
                   VerticalAlignment="Stretch"
                   IsReadOnly="True"
@@ -28,16 +39,7 @@
                   BorderThickness="1"
                   BorderBrush="Gray"/>
 
-        <StackPanel
-            Grid.Row="1"
-            DockPanel.Dock="Bottom"
-            Width="200"
-            Spacing="10"
-            Orientation="Horizontal"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center">
-            <Button Name="AddEmployeeButton" Content="Добавить запись на прием" Click="AddCouponButtonClick"/>
-            <Button Name="DeleteEmployeeButton" Content="Удалить записи за день" Click="DeleteAllCouponButtonClick"/>
-        </StackPanel>
+        <Button Grid.Row="2" Grid.Column="1" Name="AddCouponButton" Content="Добавить запись на прием" Click="AddCouponButtonClick" Margin="5"/>
+        <Button Grid.Row="2" Grid.Column="2" Name="DeleteAllCouponsButton" Content="Удалить записи за день" Click="DeleteAllCouponButtonClick" Margin="5"/>
     </Grid>
 </Window>

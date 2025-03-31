@@ -5,33 +5,42 @@
         mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="150"
         x:Class="VanessaApp.Screens.DutyDoctor.AddCoupon.AddCouponWindow"
         Title="Создать новую запись на прием">
-        <StackPanel Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <!-- Поля для ввода данных клиента -->
-                <TextBox 
-                        Watermark="Фамилия" 
-                        x:Name="SurnameTextBox" 
-                        Margin="5"/>
-                <TextBox 
-                        Watermark="Имя" 
-                        x:Name="NameTextBox" 
-                        Margin="5"/>
-                <TextBox 
-                        Watermark="Отчество" 
-                        x:Name="PatronymicTextBox" 
-                        Margin="5"/>
-                <TextBox 
-                        Watermark="Email" 
-                        x:Name="EmailTextBox" 
-                        Margin="5"/>
+        
+        <Grid>
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <StackPanel Grid.Row="0" Background="Aqua" Height="100">
+                        <Image Source="/Images/VanessaLogo.png" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" Height="100"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Row="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBox 
+                                Watermark="Фамилия" 
+                                x:Name="SurnameTextBox" 
+                                Margin="5"/>
+                        <TextBox 
+                                Watermark="Имя" 
+                                x:Name="NameTextBox" 
+                                Margin="5"/>
+                        <TextBox 
+                                Watermark="Отчество" 
+                                x:Name="PatronymicTextBox" 
+                                Margin="5"/>
+                        <TextBox 
+                                Watermark="Email" 
+                                x:Name="EmailTextBox" 
+                                Margin="5"/>
 
-                <!-- ComboBox для выбора специалиста -->
-                <ComboBox 
-                        x:Name="SpecialistComboBox"
-                        PlaceholderText="Выберите специалиста" 
-                        Margin="5">
-                </ComboBox>
-
-                <!-- Кнопка для сохранения данных -->
-                <Button Name="SaveButton" Content="Сохранить" Click="SaveButton_Click"/>
-        </StackPanel>
+                        <ComboBox 
+                                x:Name="SpecialistComboBox"
+                                PlaceholderText="Выберите специалиста" 
+                                Margin="5"/>
+                </StackPanel>
+                
+                <Button Grid.Row="2" Margin="10" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Name="SaveButton" Content="Сохранить" Click="SaveButton_Click"/>
+        </Grid>
 </Window>

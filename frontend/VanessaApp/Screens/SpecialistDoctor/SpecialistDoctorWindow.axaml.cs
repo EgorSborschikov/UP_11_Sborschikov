@@ -38,7 +38,7 @@ public partial class SpecialistDoctorWindow : Window
     private void DeleteDataButton_Click(object? sender, RoutedEventArgs e)
     {
         // DataGrid clear
-        var dataGrid = this.FindControl<DataGrid>("CouponsDataGrid");
+        var dataGrid = this.FindControl<DataGrid>("PatienByCouponDataGrid");
 
         if (dataGrid != null)
         {

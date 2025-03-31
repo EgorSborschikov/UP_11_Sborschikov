@@ -7,9 +7,24 @@
         x:Class="VanessaApp.Screens.Pharmacist.PharmacistWindow"
         Title="Общий список фармацевтических товаров"
         x:DataType="viewModels:PharmacistViewModel">
-    <StackPanel Margin="10" Spacing="10">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
         
-        <DataGrid x:Name="ProductDataGrid"
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="Aqua" Height="100">
+            <Image Source="/Images/VanessaLogo.png" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" Height="100"/>
+        </StackPanel>
+        
+        <DataGrid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" x:Name="ProductDataGrid"
                   ItemsSource="{Binding Products}"
                   Margin="5"
                   Height="300"
@@ -30,17 +45,20 @@
             </DataGrid.Columns>
         </DataGrid>
         
-        <StackPanel 
-            Width="200"
-            Margin="10"
-            Spacing="10"
-            Orientation="Horizontal"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center">
-            
-            <Button Name="AddSaleButton" Content="Продажа товаров" Click="AddSaleButton_Click"/>
-            <Button Name="ViewSaleReportButton" Content="Отчет по продажам" Click="ViewSaleReportButton_Click"/>
-            <Button Name="EditProductButton" Content="Опции с товарами" Click="CRUDProductButton_Click"/>
-        </StackPanel>
-    </StackPanel>
+        <Button Grid.Row="2" 
+                Grid.Column="0" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Margin="10" Name="AddSaleButton" Content="Продажа товаров" Click="AddSaleButton_Click"/>
+        <Button Grid.Row="2" 
+                Grid.Column="1" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Margin="10" Name="ViewSaleReportButton" Content="Отчет по продажам" Click="ViewSaleReportButton_Click"/>
+        <Button Grid.Row="2" 
+                Grid.Column="2" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Margin="10" Name="EditProductButton" Content="Опции с товарами" Click="CRUDProductButton_Click"/>
+    </Grid>
 </Window>

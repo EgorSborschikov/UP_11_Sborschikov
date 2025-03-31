@@ -5,20 +5,21 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="VanessaApp.MainWindow"
         Title="Вход в систему">
-   <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="5">
+    
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="5">
        <StackPanel>
-           <TextBlock Text = "АВТОРИЗАЦИЯ" FontSize="20" Margin="0,0,0,20"/>
+           <TextBlock Text = "АВТОРИЗАЦИЯ" FontSize="20" Margin="20" HorizontalAlignment="Center"/>
        </StackPanel>
        <StackPanel>
            <TextBox Name="LoginBox" Watermark="Логин" Width="300" Margin="0,0,0,10"/>
            <TextBox Name="PasswordBox" Watermark="Пароль" Width="300" Margin="0,0,0,10" PasswordChar="*"/>
        </StackPanel>
        <StackPanel>
-           <Button Name="OnLogin" Content="Войти" Width="300" Margin="10" Click="OnLoginClick"/>
+           <Button Name="OnLogin" Content="Войти" HorizontalContentAlignment="Center" Width="300" Margin="10" Click="OnLoginClick"/>
        </StackPanel>
        
        <StackPanel>
-           <Button Name="OnLoginGuest" Content="Войти как гость" Width="300" Margin="10" Click="OnLoginGuest_Click"/>
+           <Button Name="OnLoginGuest" Content="Войти как гость" HorizontalContentAlignment="Center" Width="300" Margin="10" Click="OnLoginGuest_Click"/>
        </StackPanel>
    </StackPanel>
 </Window>

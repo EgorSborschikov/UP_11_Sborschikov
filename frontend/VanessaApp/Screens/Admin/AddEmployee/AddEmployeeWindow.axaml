@@ -3,41 +3,45 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:VanessaApp.ViewModels"
-        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="800"
+        mc:Ignorable="d" d:DesignWidth="180" d:DesignHeight="300"
         x:Class="VanessaApp.Screens.Admin.AddEmployee.AddEmployeeWindow"
         Title="Добавление сотрудника"
         x:DataType="viewModels:AdminWindowViewModel">
         
-        <StackPanel 
-                Margin="10" 
-                VerticalAlignment="Center" 
-                HorizontalAlignment="Center">
+        <Grid>
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
                 
-                <!-- Поля ввода для данных сотрудника -->
-                <TextBox x:Name="SurnameTextBox" Watermark="Фамилия"/>
-                <TextBox x:Name="NameTextBox" Watermark="Имя" />
-                <TextBox x:Name="LastNameTextBox" Watermark="Отчество" />
-                <TextBox x:Name="PassportDataTextBox" Watermark="Паспортные данные" />
-                <TextBox x:Name="PhoneNumberTextBox" Watermark="Номер телефона" />
-                <TextBox x:Name="EmailTextBox" Watermark="Адрес электронной почты" />
+                <StackPanel Grid.Row="0"   Background="Aqua" Height="100">
+                        <Image Source="/Images/VanessaLogo.png" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" Height="100"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Row="1"  Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+                
+                        <TextBox x:Name="SurnameTextBox" Watermark="Фамилия"/>
+                        <TextBox x:Name="NameTextBox" Watermark="Имя" />
+                        <TextBox x:Name="LastNameTextBox" Watermark="Отчество" />
+                        <TextBox x:Name="PassportDataTextBox" Watermark="Паспортные данные" />
+                        <TextBox x:Name="PhoneNumberTextBox" Watermark="Номер телефона" />
+                        <TextBox x:Name="EmailTextBox" Watermark="Адрес электронной почты" />
 
-                <!-- ComboBox для выбора Branch -->
-                <ComboBox 
-                        x:Name="BranchComboBox" 
-                        PlaceholderText="Филиал" 
-                        ItemsSource="{Binding Branches}"/>
+                        <ComboBox 
+                                x:Name="BranchComboBox" 
+                                PlaceholderText="Филиал" 
+                                ItemsSource="{Binding Branches}"/>
 
-                <!-- ComboBox для выбора Position -->
-                <ComboBox 
-                        x:Name="PositionComboBox" 
-                        PlaceholderText="Должность" 
-                        ItemsSource="{Binding Positions}" />
+                        <ComboBox 
+                                x:Name="PositionComboBox" 
+                                PlaceholderText="Должность" 
+                                ItemsSource="{Binding Positions}" />
 
-                <!-- Поля ввода для данных auth -->
-                <TextBox x:Name="LoginTextBox" Watermark="Логин" />
-                <TextBox x:Name="PasswordTextBox" Watermark="Пароль" />
-
-                <!-- Кнопка для сохранения -->
-                <Button Content="Сохранить" Click="SaveButton_Click" />
-        </StackPanel>
+                        <TextBox x:Name="LoginTextBox" Watermark="Логин" />
+                        <TextBox x:Name="PasswordTextBox" Watermark="Пароль" />
+                </StackPanel> 
+                
+                <Button Grid.Row="2" Margin="10" Content="Сохранить" Click="SaveButton_Click" HorizontalAlignment="Center"/>
+        </Grid>
 </Window>

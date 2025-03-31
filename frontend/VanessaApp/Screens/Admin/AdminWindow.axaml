@@ -10,14 +10,25 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/> <!-- DataGrid Row -->
-            <RowDefinition Height="Auto"/> <!-- Button Row -->
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
         
-        <DataGrid ItemsSource="{Binding Employees}"
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="Aqua" Height="100">
+            <Image Source="/Images/VanessaLogo.png" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" Height="100"/>
+        </StackPanel>
+        
+        <DataGrid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding Employees}"
                   SelectedItem="{Binding SelectedEmployee}"
                   AutoGenerateColumns="True"
                   Margin="10"
+                  MinHeight="200"
                   HorizontalAlignment="Stretch"
                   VerticalAlignment="Stretch"
                   IsReadOnly="True"
@@ -25,19 +36,37 @@
                   CanUserResizeColumns="True"
                   CanUserSortColumns="False"
                   GridLinesVisibility="All"
-                  BorderThickness="1" BorderBrush="Gray"/>
-
-        <StackPanel 
-            Grid.Row="1" 
-            DockPanel.Dock="Bottom" 
-            Width="200" 
-            Spacing="10" 
-            Orientation="Horizontal"
+                  BorderThickness="1" 
+                  BorderBrush="Gray"/>
+        
+        <Button 
+            Grid.Row="2" 
+            Grid.Column="0" 
+            Margin="10"
+            Name="AddEmployeeButton" 
+            Content="Добавить сотрудника"
+            HorizontalAlignment="Center" 
             VerticalAlignment="Center"
-            HorizontalAlignment="Center">
-            <Button Name="AddEmployeeButton" Content="Добавить сотрудника" Click="AddEmployeeButtonClick"/>
-            <Button Name="EditEmployeeButton" Content="Изменить данные сотрудника" Click="EditEmployeeButtonClick"/>
-            <Button Name="DeleteEmployeeButton" Content="Удалить сотрудника" Click="DeleteEmployeeButtonClick"/>
-        </StackPanel>
+            Click="AddEmployeeButtonClick"/>
+        
+        <Button 
+            Grid.Row="2" 
+            Grid.Column="1" 
+            Margin="10"
+            Name="EditEmployeeButton" 
+            Content="Изменить данные сотрудника" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Click="EditEmployeeButtonClick"/>
+        
+        <Button 
+            Grid.Row="2" 
+            Grid.Column="2" 
+            Margin="10"
+            Name="DeleteEmployeeButton" 
+            Content="Удалить сотрудника" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Click="DeleteEmployeeButtonClick"/>
     </Grid>
 </Window>

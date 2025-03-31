@@ -31,7 +31,7 @@ public partial class AdminWindow : Window
     {
         try
         {
-            var _viewModel = (AdminWindowViewModel)DataContext;
+            var _viewModel = new AdminWindowViewModel();
             
             var addEmployeeWindow = new AddEmployeeWindow(_viewModel);
             await addEmployeeWindow.ShowDialog(this);

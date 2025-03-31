@@ -57,4 +57,9 @@
     <ItemGroup>
       <UpToDateCheckInput Remove="Screens\Pharmacist\DeleteProduct\DeleteProductWindow.axaml" />
     </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Images\VanessaLogo.png" />
+      <AvaloniaResource Include="Images\VanessaLogo.png" />
+    </ItemGroup>
 </Project>
