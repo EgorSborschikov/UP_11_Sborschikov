@@ -57,10 +57,6 @@ public class MainWindowViewModel : ReactiveObject
                                 pharmaticsWindow.Show();
                             }
                             break;
-                        case 2: // Accountant Window
-                            Console.WriteLine("Accountant role selected.");
-                            // Открыть окно бухгалтера
-                            break;
                         case 3: // Specialist Doctor Window
                             Console.WriteLine("Specialist doctor role selected.");
                             var specialistDoctorWindow = new SpecialistDoctorWindow();

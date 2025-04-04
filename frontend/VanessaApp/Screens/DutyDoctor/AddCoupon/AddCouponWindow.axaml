@@ -14,7 +14,7 @@
                 </Grid.RowDefinitions>
                 
                 <StackPanel Grid.Row="0" Background="Aqua" Height="100">
-                        <Image Source="/Images/VanessaLogo.png" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" Height="100"/>
+                        <Image Source="/Logo/VanessaLogo.png" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" Height="100"/>
                 </StackPanel>
                 
                 <StackPanel Grid.Row="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">

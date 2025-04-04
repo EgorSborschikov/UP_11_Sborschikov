@@ -29,5 +29,6 @@ public partial class OnlineOrderWindow : Window
         // Execute online order
         _viewModel.CreateNewClient();
         _viewModel.SaveOrder();
+        this.Close();
     }
 }

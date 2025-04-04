@@ -60,6 +60,6 @@
 
     <ItemGroup>
       <None Remove="Images\VanessaLogo.png" />
-      <AvaloniaResource Include="Images\VanessaLogo.png" />
+      <AvaloniaResource Include="Logo\VanessaLogo.png" />
     </ItemGroup>
 </Project>

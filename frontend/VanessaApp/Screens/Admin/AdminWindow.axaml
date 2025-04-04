@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
         
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="Aqua" Height="100">
-            <Image Source="/Images/VanessaLogo.png" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" Height="100"/>
+            <Image Source="/Logo/VanessaLogo.png" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" Height="100"/>
         </StackPanel>
         
         <DataGrid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding Employees}"
